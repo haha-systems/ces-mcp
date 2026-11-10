@@ -530,11 +530,11 @@ func validateCandidate(
 
 	if err := decoder.Decode(&generic); err != nil {
 		return []string{
-			err.Error(),
-		}, nil, engineError(
-			"malformed_artifact",
-			"artifact result must be valid JSON",
-		)
+				err.Error(),
+			}, nil, engineError(
+				"malformed_artifact",
+				"artifact result must be valid JSON",
+			)
 	}
 
 	schemaFailures := validateAgainstSchema(generic, prepared.Prompt.OutputSchema, "result")

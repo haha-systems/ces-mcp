@@ -5,9 +5,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"net/url"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/haha-systems/ces-mcp/internal/cognition"
 	"github.com/haha-systems/ces-mcp/internal/engine"
@@ -119,6 +121,12 @@ func (s *Server) Run(ctx context.Context, transport mcp.Transport) error {
 }
 
 func (s *Server) MCP() *mcp.Server { return s.mcp }
+
+func (s *Server) StreamableHTTPHandler() *mcp.StreamableHTTPHandler {
+	return mcp.NewStreamableHTTPHandler(func(*http.Request) *mcp.Server {
+		return s.mcp
+	}, &mcp.StreamableHTTPOptions{SessionTimeout: 30 * time.Minute})
+}
 
 func (s *Server) registerTools() {
 	addTool(

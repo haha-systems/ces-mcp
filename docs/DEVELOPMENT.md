@@ -13,6 +13,14 @@ go run ./cmd/ces-mcp
 
 The server uses stdio, so run it through an MCP client or inspector that can launch stdio servers. Do not expect application logs on stdout; startup errors go to stderr. Persistent runs default to `./data`.
 
+## Remote Streamable HTTP
+
+```sh
+CES_TRANSPORT=http CES_HTTP_ADDR=127.0.0.1:8080 go run ./cmd/ces-mcp
+```
+
+The endpoint is `http://127.0.0.1:8080/mcp` unless you set `CES_HTTP_PATH`. To bind beyond loopback, also set a strong `CES_HTTP_BEARER_TOKEN`. For remote deployment, configure HTTPS with `CES_HTTP_TLS_CERT_FILE` and `CES_HTTP_TLS_KEY_FILE`, or terminate TLS at a trusted reverse proxy. The proxy must forward `Authorization` to the server. The service rejects non-loopback binds without a bearer token.
+
 ## Build and verify
 
 ```sh
@@ -39,6 +47,12 @@ The included command adapter supports server-managed execution. Configure:
 
 | Variable | Purpose |
 | --- | --- |
+| `CES_TRANSPORT` | `stdio` (default) or `http` / `streamable-http`. |
+| `CES_HTTP_ADDR` | HTTP listen address; defaults to `127.0.0.1:8080`. |
+| `CES_HTTP_PATH` | MCP route; defaults to `/mcp`. |
+| `CES_HTTP_BEARER_TOKEN` | Optional loopback auth token; required for non-loopback binds. |
+| `CES_HTTP_TLS_CERT_FILE` | TLS certificate PEM path. Set together with the key path. |
+| `CES_HTTP_TLS_KEY_FILE` | TLS private key PEM path. Set together with the certificate path. |
 | `CES_RUNTIME_EXECUTABLE` | Executable path or command name for the adapter. Empty disables server-managed mode. |
 | `CES_RUNTIME_ARGS` | Space-separated arguments. |
 | `CES_RUNTIME_ENV_ALLOWLIST` | Comma-separated environment variable names passed to the adapter. Other environment variables are not inherited. |

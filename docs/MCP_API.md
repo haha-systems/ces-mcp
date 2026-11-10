@@ -1,6 +1,6 @@
 # MCP tools and resources
 
-The server speaks MCP over stdio. Tool inputs use strict JSON Schemas with `additionalProperties: false`. Each tool advertises an output schema and returns MCP structured content shaped as:
+The server speaks MCP over stdio by default, or Streamable HTTP when `CES_TRANSPORT=http`. HTTP clients connect to `/mcp` by default. Tool inputs use strict JSON Schemas with `additionalProperties: false`. Each tool advertises an output schema and returns MCP structured content shaped as:
 
 ```json
 {"ok":true,"data":{}}
@@ -67,6 +67,12 @@ The `artifact.dispatch` object must include the values returned by `ces_dispatch
 | `ces://runs/{run_id}/export` | Complete run export. |
 
 The `ces_project` tool and projection resource both derive their content from the accepted event store. A conversational summary cannot be submitted as a replacement projection.
+
+## Streamable HTTP deployment
+
+Configure `CES_HTTP_ADDR` (default `127.0.0.1:8080`), `CES_HTTP_PATH` (default `/mcp`), and optional TLS certificate and key files. A non-loopback bind requires `CES_HTTP_BEARER_TOKEN`. Clients send it in the standard `Authorization: Bearer <token>` header. A TLS-terminating reverse proxy can handle public TLS; keep the application token check enabled and configure the proxy to forward the authorization header.
+
+The checked-in remote client example shows the endpoint and header shape. Client configuration fields vary, so adapt the example to the target MCP client. The bearer token is static shared-secret authentication. The server does not implement OAuth discovery or token issuance.
 
 ## Phase artifact shape
 

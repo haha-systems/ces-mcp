@@ -20,7 +20,7 @@ A result is checked against the stored dispatch, latest state version, latest di
 
 ### MCP interface
 
-`internal/mcpserver` exposes the engine through MCP tools and resources. The engine does not import the MCP package. The stdio transport is implemented with the official Go MCP SDK.
+`internal/mcpserver` exposes the engine through MCP tools and resources. The engine does not import the MCP package. The server supports stdio and Streamable HTTP transports through the official Go MCP SDK. Set `CES_TRANSPORT=stdio` or `CES_TRANSPORT=http`; stdio remains the default. HTTP serves the same MCP server and engine state at `/mcp` by default.
 
 Every tool result includes both MCP structured content and a JSON response envelope:
 
@@ -43,6 +43,8 @@ Every dispatch records:
 Submissions must include the exact original dispatch reference. Reused session identifiers, stale state, unknown or superseded dispatches, mismatched hashes, duplicate JSON keys, invalid records, and unauthorized phase mutations are rejected.
 
 CES can verify that an artifact refers to a stored dispatch and projection. It cannot verify the actual prompt, memory, hidden context, model session, or external tools available to an agent. `allowed_tools` is declared in the manifest for the host or adapter; CES does not enforce it. Isolation status is therefore `not_attested` unless an adapter reports otherwise, and an adapter's report is not independently verified.
+
+For Streamable HTTP, the server defaults to `127.0.0.1:8080/mcp`. Binding to a non-loopback interface requires a bearer token. The server supports direct TLS certificate and key files or TLS termination at a trusted proxy. It applies Go's cross-origin request protection and limits idle MCP session lifetime to 30 minutes. MCP protocol sessions live in process memory and clients must reconnect after a server restart; CES runs remain in the persistent data directory. The static bearer token is a shared secret, not an OAuth authorization server.
 
 Host-managed mode lets an MCP client create fresh phase agents and submit their results. CES requires a distinct session identifier for each dispatch but cannot prove that those contexts are fresh.
 

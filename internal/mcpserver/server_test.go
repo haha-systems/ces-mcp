@@ -3,10 +3,12 @@ package mcpserver
 import (
 	"context"
 	"encoding/json"
+	"net/http/httptest"
 	"strings"
 	"testing"
 
 	"github.com/haha-systems/ces-mcp/internal/engine"
+	"github.com/haha-systems/ces-mcp/internal/httptransport"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
@@ -137,6 +139,47 @@ func TestMCPProtocolToolsResourcesAndSchemaValidation(t *testing.T) {
 
 	if projection["state_version"] != float64(0) {
 		t.Fatalf("unexpected resource projection: %+v", projection)
+	}
+}
+
+func TestStreamableHTTPTransportSupportsMCPClient(t *testing.T) {
+	ctx := context.Background()
+	manager, err := engine.NewManager(t.TempDir(), nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	server := New(manager)
+	handler, err := httptransport.New(server.StreamableHTTPHandler(), httptransport.Config{
+		Address: "127.0.0.1:8080", Path: "/mcp",
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	httpServer := httptest.NewServer(handler.Handler)
+	defer httpServer.Close()
+
+	client := mcp.NewClient(&mcp.Implementation{Name: "ces-http-test-client", Version: "0.2.0"}, nil)
+	session, err := client.Connect(ctx, &mcp.StreamableClientTransport{Endpoint: httpServer.URL + "/mcp"}, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer session.Close()
+
+	tools, err := session.ListTools(ctx, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(tools.Tools) != 11 {
+		t.Fatalf("Streamable HTTP tools = %d, want 11", len(tools.Tools))
+	}
+	created, err := session.CallTool(ctx, &mcp.CallToolParams{
+		Name: "ces_create", Arguments: map[string]any{"goal": "remote HTTP run"},
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if created.IsError || responseBody(t, created)["ok"] != true {
+		t.Fatalf("HTTP ces_create failed: %+v", created.StructuredContent)
 	}
 }
 

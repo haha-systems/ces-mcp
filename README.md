@@ -13,7 +13,17 @@ go build -o ./bin/ces-mcp ./cmd/ces-mcp
 CES_DATA_DIR="$PWD/data" ./bin/ces-mcp
 ```
 
-The server uses MCP stdio. Configure it as a local MCP server in the client. Example launch declarations are in [`config/`](config/); the JSON and TOML examples use common server-block formats, so adapt the field names to the client. The default data directory is `./data`; set `CES_DATA_DIR` to choose another location.
+The server uses MCP stdio by default. Configure it as a local MCP server in the client. Example launch declarations are in [`config/`](config/); the JSON and TOML examples use common server-block formats, so adapt the field names to the client. The default data directory is `./data`; set `CES_DATA_DIR` to choose another location.
+
+## Remote Streamable HTTP
+
+Select the Streamable HTTP transport and bind address:
+
+```sh
+CES_TRANSPORT=http CES_HTTP_ADDR=127.0.0.1:8080 ./bin/ces-mcp
+```
+
+The MCP endpoint is `http://127.0.0.1:8080/mcp` by default. Set `CES_HTTP_PATH` to change the path. A non-loopback bind such as `0.0.0.0:8080` requires `CES_HTTP_BEARER_TOKEN`. Use a strong token and TLS, either through `CES_HTTP_TLS_CERT_FILE` and `CES_HTTP_TLS_KEY_FILE` or a TLS-terminating proxy. The remote client declaration example is [`config/remote-http-client.json`](config/remote-http-client.json).
 
 ## Phase workflow
 
