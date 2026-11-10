@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "ces": {
+      "url": "https://ces.example.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${CES_HTTP_BEARER_TOKEN}"
+      }
+    }
+  }
+}
