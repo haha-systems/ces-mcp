@@ -1,0 +1,6 @@
+[mcp_servers.ces]
+command = "/absolute/path/to/ces-mcp/bin/ces-mcp"
+args = []
+
+[mcp_servers.ces.env]
+CES_DATA_DIR = "/absolute/path/to/ces-mcp/data"

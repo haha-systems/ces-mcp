@@ -1,0 +1,3841 @@
+{
+  "ces_version": "0.2.0",
+  "run": {
+    "schema_version": "0.2.0",
+    "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+    "goal": "verify the reported regression",
+    "created_at": "2026-11-09T20:08:44.762668Z",
+    "updated_at": "2026-11-09T20:08:45.122775Z",
+    "state_version": 10,
+    "accepted_events": [
+      {
+        "sequence": 1,
+        "kind": "TaskCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "task",
+        "object_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "revision_id": "",
+        "at": "2026-11-09T20:08:44.762668Z",
+        "payload": {
+          "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+          "goal": "verify the reported regression",
+          "status": "active",
+          "phase": "triage",
+          "reopen_count": 0,
+          "created_at": "2026-11-09T20:08:44.762668Z",
+          "updated_at": "2026-11-09T20:08:44.762668Z"
+        }
+      },
+      {
+        "sequence": 2,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "observation",
+        "object_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "at": "2026-11-09T20:08:44.801007Z",
+        "payload": {
+          "kind": "observation",
+          "object": {
+            "id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+            "content": "the command reports the regression",
+            "provenance": {
+              "phase": "triage",
+              "process": "demo-fresh-context-1",
+              "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+            "created_at": "2026-11-09T20:08:44.801007Z"
+          }
+        }
+      },
+      {
+        "sequence": 3,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "claim",
+        "object_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "at": "2026-11-09T20:08:44.801007Z",
+        "payload": {
+          "kind": "claim",
+          "object": {
+            "id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+            "text": "the regression is reproducible",
+            "provenance": {
+              "phase": "triage",
+              "process": "demo-fresh-context-1",
+              "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+            "created_at": "2026-11-09T20:08:44.801007Z"
+          }
+        }
+      },
+      {
+        "sequence": 4,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "unknown",
+        "object_id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "at": "2026-11-09T20:08:44.801007Z",
+        "payload": {
+          "kind": "unknown",
+          "object": {
+            "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+            "question": "does the fix pass the full check suite?",
+            "status": "open",
+            "provenance": {
+              "phase": "triage",
+              "process": "demo-fresh-context-1",
+              "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+            "created_at": "2026-11-09T20:08:44.801007Z"
+          }
+        }
+      },
+      {
+        "sequence": 5,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "at": "2026-11-09T20:08:44.801007Z",
+        "payload": {
+          "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+          "kind": "supports",
+          "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+          "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+          "status": "active",
+          "provenance": {
+            "phase": "triage",
+            "process": "demo-fresh-context-1",
+            "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+          "created_at": "2026-11-09T20:08:44.801007Z"
+        }
+      },
+      {
+        "sequence": 6,
+        "kind": "PhaseChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "task",
+        "object_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "revision_id": "",
+        "at": "2026-11-09T20:08:44.810859Z",
+        "payload": {
+          "from": "triage",
+          "to": "abduce",
+          "reason": "accepted triage artifact",
+          "reopen_count": 0
+        }
+      },
+      {
+        "sequence": 7,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "hypothesis",
+        "object_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "at": "2026-11-09T20:08:44.863268Z",
+        "payload": {
+          "kind": "hypothesis",
+          "object": {
+            "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+            "mechanism": "the shared path mishandles the result",
+            "falsifier": "the shared path emits the expected result",
+            "status": "proposed",
+            "provenance": {
+              "phase": "abduce",
+              "process": "demo-fresh-context-2",
+              "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+            "created_at": "2026-11-09T20:08:44.863268Z"
+          }
+        }
+      },
+      {
+        "sequence": 8,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "hypothesis",
+        "object_id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "at": "2026-11-09T20:08:44.863268Z",
+        "payload": {
+          "kind": "hypothesis",
+          "object": {
+            "id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+            "mechanism": "the provider returned incomplete data",
+            "falsifier": "the provider payload is complete",
+            "status": "proposed",
+            "provenance": {
+              "phase": "abduce",
+              "process": "demo-fresh-context-2",
+              "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+            "created_at": "2026-11-09T20:08:44.863268Z"
+          }
+        }
+      },
+      {
+        "sequence": 9,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "at": "2026-11-09T20:08:44.863268Z",
+        "payload": {
+          "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+          "kind": "supports",
+          "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+          "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+          "status": "active",
+          "provenance": {
+            "phase": "abduce",
+            "process": "demo-fresh-context-2",
+            "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+          "created_at": "2026-11-09T20:08:44.863268Z"
+        }
+      },
+      {
+        "sequence": 10,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_43c3fa4aec004676cc209872058e91bf",
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "at": "2026-11-09T20:08:44.863268Z",
+        "payload": {
+          "id": "ces_43c3fa4aec004676cc209872058e91bf",
+          "kind": "contradicts",
+          "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+          "target_id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+          "status": "active",
+          "provenance": {
+            "phase": "abduce",
+            "process": "demo-fresh-context-2",
+            "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+          "created_at": "2026-11-09T20:08:44.863268Z"
+        }
+      },
+      {
+        "sequence": 11,
+        "kind": "ObjectStatusChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "hypothesis",
+        "object_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "at": "2026-11-09T20:08:44.863268Z",
+        "payload": {
+          "kind": "hypothesis",
+          "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+          "from": "proposed",
+          "to": "leading"
+        }
+      },
+      {
+        "sequence": 12,
+        "kind": "ObjectStatusChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "hypothesis",
+        "object_id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "at": "2026-11-09T20:08:44.863268Z",
+        "payload": {
+          "kind": "hypothesis",
+          "id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+          "from": "proposed",
+          "to": "rejected"
+        }
+      },
+      {
+        "sequence": 13,
+        "kind": "PhaseChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "task",
+        "object_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "revision_id": "",
+        "at": "2026-11-09T20:08:44.880551Z",
+        "payload": {
+          "from": "abduce",
+          "to": "frame",
+          "reason": "accepted abduce artifact",
+          "reopen_count": 0
+        }
+      },
+      {
+        "sequence": 14,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "constraint",
+        "object_id": "ces_a3d4896fb82303efa360697057543de5",
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "at": "2026-11-09T20:08:44.945349Z",
+        "payload": {
+          "kind": "constraint",
+          "object": {
+            "id": "ces_a3d4896fb82303efa360697057543de5",
+            "text": "preserve the external result format",
+            "provenance": {
+              "phase": "frame",
+              "process": "demo-fresh-context-3",
+              "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+            "created_at": "2026-11-09T20:08:44.945349Z"
+          }
+        }
+      },
+      {
+        "sequence": 15,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "frame",
+        "object_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "at": "2026-11-09T20:08:44.945349Z",
+        "payload": {
+          "kind": "frame",
+          "object": {
+            "id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+            "name": "fix shared result handling",
+            "summary": "change the shared path and check its consumers",
+            "completion_conditions": [
+              "all checks pass"
+            ],
+            "disconfirmation_conditions": [
+              "the regression still reproduces"
+            ],
+            "status": "pending",
+            "provenance": {
+              "phase": "frame",
+              "process": "demo-fresh-context-3",
+              "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+            "created_at": "2026-11-09T20:08:44.945349Z"
+          }
+        }
+      },
+      {
+        "sequence": 16,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "at": "2026-11-09T20:08:44.945349Z",
+        "payload": {
+          "id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+          "kind": "depends_on",
+          "source_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+          "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+          "status": "active",
+          "provenance": {
+            "phase": "frame",
+            "process": "demo-fresh-context-3",
+            "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+          "created_at": "2026-11-09T20:08:44.945349Z"
+        }
+      },
+      {
+        "sequence": 17,
+        "kind": "FrameStatusChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "frame",
+        "object_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "at": "2026-11-09T20:08:44.945349Z",
+        "payload": {
+          "kind": "frame",
+          "id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+          "from": "pending",
+          "to": "active"
+        }
+      },
+      {
+        "sequence": 18,
+        "kind": "PhaseChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "task",
+        "object_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "revision_id": "",
+        "at": "2026-11-09T20:08:44.959883Z",
+        "payload": {
+          "from": "frame",
+          "to": "execute",
+          "reason": "accepted frame artifact",
+          "reopen_count": 0
+        }
+      },
+      {
+        "sequence": 19,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "observation",
+        "object_id": "ces_bfd41b0b4c6b1264cdbe3a80dd0394e7",
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "at": "2026-11-09T20:08:45.037551Z",
+        "payload": {
+          "kind": "observation",
+          "object": {
+            "id": "ces_bfd41b0b4c6b1264cdbe3a80dd0394e7",
+            "content": "all checks pass after the change",
+            "provenance": {
+              "phase": "execute",
+              "process": "demo-fresh-context-4",
+              "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+            "created_at": "2026-11-09T20:08:45.037551Z"
+          }
+        }
+      },
+      {
+        "sequence": 20,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "action",
+        "object_id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "at": "2026-11-09T20:08:45.037551Z",
+        "payload": {
+          "kind": "action",
+          "object": {
+            "id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+            "description": "updated the shared result handling",
+            "status": "recorded",
+            "provenance": {
+              "phase": "execute",
+              "process": "demo-fresh-context-4",
+              "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+            "created_at": "2026-11-09T20:08:45.037551Z"
+          }
+        }
+      },
+      {
+        "sequence": 21,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "outcome",
+        "object_id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "at": "2026-11-09T20:08:45.037551Z",
+        "payload": {
+          "kind": "outcome",
+          "object": {
+            "id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+            "description": "all checks pass after the change",
+            "provenance": {
+              "phase": "execute",
+              "process": "demo-fresh-context-4",
+              "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+            "created_at": "2026-11-09T20:08:45.037551Z"
+          }
+        }
+      },
+      {
+        "sequence": 22,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_83740477f768ee687af98c3e401e5f5d",
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "at": "2026-11-09T20:08:45.037551Z",
+        "payload": {
+          "id": "ces_83740477f768ee687af98c3e401e5f5d",
+          "kind": "implements",
+          "source_id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+          "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+          "status": "active",
+          "provenance": {
+            "phase": "execute",
+            "process": "demo-fresh-context-4",
+            "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+          "created_at": "2026-11-09T20:08:45.037551Z"
+        }
+      },
+      {
+        "sequence": 23,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_fe93f6d13eced804206875f8d5685ba7",
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "at": "2026-11-09T20:08:45.037551Z",
+        "payload": {
+          "id": "ces_fe93f6d13eced804206875f8d5685ba7",
+          "kind": "tests",
+          "source_id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+          "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+          "status": "active",
+          "provenance": {
+            "phase": "execute",
+            "process": "demo-fresh-context-4",
+            "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+          "created_at": "2026-11-09T20:08:45.037551Z"
+        }
+      },
+      {
+        "sequence": 24,
+        "kind": "PhaseChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "task",
+        "object_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "revision_id": "",
+        "at": "2026-11-09T20:08:45.049657Z",
+        "payload": {
+          "from": "execute",
+          "to": "close",
+          "reason": "accepted execute artifact",
+          "reopen_count": 0
+        }
+      },
+      {
+        "sequence": 25,
+        "kind": "ObjectCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "observation",
+        "object_id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "at": "2026-11-09T20:08:45.108253Z",
+        "payload": {
+          "kind": "observation",
+          "object": {
+            "id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+            "content": "all checks pass",
+            "provenance": {
+              "phase": "close",
+              "process": "demo-fresh-context-5",
+              "artifact": "dsp_737ac4f475b7fdbfb636c324687fd462",
+              "runtime": "host_managed",
+              "model": "external-agent"
+            },
+            "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+            "created_at": "2026-11-09T20:08:45.108253Z"
+          }
+        }
+      },
+      {
+        "sequence": 26,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_1feaee7198ccfb6a827ebde79b971807",
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "at": "2026-11-09T20:08:45.108253Z",
+        "payload": {
+          "id": "ces_1feaee7198ccfb6a827ebde79b971807",
+          "kind": "tests",
+          "source_id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+          "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+          "status": "active",
+          "provenance": {
+            "phase": "close",
+            "process": "demo-fresh-context-5",
+            "artifact": "dsp_737ac4f475b7fdbfb636c324687fd462",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+          "created_at": "2026-11-09T20:08:45.108253Z"
+        }
+      },
+      {
+        "sequence": 27,
+        "kind": "RelationCreated",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "relation",
+        "object_id": "ces_82499077435b98f862c11f85f76c7c16",
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "at": "2026-11-09T20:08:45.108253Z",
+        "payload": {
+          "id": "ces_82499077435b98f862c11f85f76c7c16",
+          "kind": "resolves",
+          "source_id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+          "target_id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+          "status": "active",
+          "provenance": {
+            "phase": "close",
+            "process": "demo-fresh-context-5",
+            "artifact": "dsp_737ac4f475b7fdbfb636c324687fd462",
+            "runtime": "host_managed",
+            "model": "external-agent"
+          },
+          "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+          "created_at": "2026-11-09T20:08:45.108253Z"
+        }
+      },
+      {
+        "sequence": 28,
+        "kind": "ObjectStatusChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "hypothesis",
+        "object_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "at": "2026-11-09T20:08:45.108253Z",
+        "payload": {
+          "kind": "hypothesis",
+          "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+          "from": "leading",
+          "to": "confirmed"
+        }
+      },
+      {
+        "sequence": 29,
+        "kind": "UnknownStatusChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "unknown",
+        "object_id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "at": "2026-11-09T20:08:45.108253Z",
+        "payload": {
+          "kind": "unknown",
+          "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+          "from": "open",
+          "to": "resolved"
+        }
+      },
+      {
+        "sequence": 30,
+        "kind": "WorkStatusChanged",
+        "work_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "object_kind": "task",
+        "object_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "revision_id": "",
+        "at": "2026-11-09T20:08:45.122105Z",
+        "payload": {
+          "from": "active",
+          "to": "complete"
+        }
+      }
+    ],
+    "dispatches": [
+      {
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "triage",
+        "state_version": 0,
+        "state_hash": "5a99b94f45574ddadbbe50d52d8a39409e7120a2b4cbbf63da88aa7f678fe903",
+        "projection_hash": "20d6d6b58876a7e5ec47d862308242990cb6a702ab2999a4639561a7c0e5d236",
+        "prompt_hash": "a8d411ee7df0246f4098e92290a2a37846dc647e9a6215d7202b9b4bb16998ff",
+        "session_id": "demo-fresh-context-1",
+        "mode": "host_managed",
+        "projection": {
+          "schema_version": "0.2.0",
+          "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+          "state_version": 0,
+          "state_hash": "5a99b94f45574ddadbbe50d52d8a39409e7120a2b4cbbf63da88aa7f678fe903",
+          "phase": "triage",
+          "state": {
+            "task": {
+              "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+              "goal": "verify the reported regression",
+              "status": "active",
+              "phase": "triage",
+              "reopen_count": 0,
+              "created_at": "2026-11-09T20:08:44.762668Z",
+              "updated_at": "2026-11-09T20:08:44.762668Z"
+            },
+            "observations": null,
+            "claims": null,
+            "hypotheses": null,
+            "unknowns": null,
+            "constraints": null,
+            "frames": null,
+            "actions": null,
+            "outcomes": null,
+            "relations": null
+          },
+          "ids": null,
+          "evidence": [],
+          "accepted_decisions": null
+        },
+        "instructions": "CES PHASE: TRIAGE\n\nThis phase contract overrides the normal instruction to complete the\nentire user task. Completing this phase artifact completes your current\nassignment. Ghost will decide what happens next.\n\nPURPOSE\nEstablish what is actually being reported and what is not yet known. You are describing the problem, not solving it.\n\nYOU MAY\n- Read code, run read-only commands, and inspect evidence.\n- Record the observations you actually made, so later phases have evidence to reason from.\n- Record claims, but only when evidence_ref names an observation: one declared in this artifact's observations, or one in the projection. CES rejects an unsupported claim, so omit the claim and record an unknown instead when you cannot cite one.\n- Record the unknowns that a diagnosis would have to resolve.\n- Classify the work and name the single next investigation.\n\nYOU MUST NOT\n- Determine or assert a root cause. That is the ABDUCE phase.\n- Design, propose, or sketch a fix.\n- Edit, create, delete, or revert any production file.\n- Run verification intended to prove a fix.\n- Claim the task is complete, or continue into any later phase.\n\nRELATION AUTHORITY\n- supports: source observation; target claim\n- resolves: source claim; target unknown\n\nOUTPUT\nReturn ONLY one JSON object, exactly matching the schema below. No\nMarkdown, no code fence, no prose or commentary before or after it. Unknown fields are rejected.\nOmit any field you have nothing to say about. local_ref values are your\nown short labels (\"o1\", \"h1\"); they are rewritten into CES identifiers\nafter the artifact is accepted. Every source and target must be a\nlocal_ref you declared in this artifact or an id present in the\nprojection. Use projection_index to select an id of the required object kind;\ndo not infer an object's kind from its content. qac_request describes how hard this work is now; it does not\nname a resource and it does not name a phase.\n\n{\n  \"classification\": \"required: what kind of work this is\",\n  \"boundaries\": [\"what is in and out of scope\"],\n  \"observations\": [{\"local_ref\": \"o1\", \"content\": \"what you saw, verbatim where possible\"}],\n  \"claims\": [{\"local_ref\": \"c1\", \"text\": \"\", \"evidence_ref\": \"required: o1, or the id of an observation in the projection\"}],\n  \"unknowns\": [{\"local_ref\": \"u1\", \"question\": \"\"}],\n  \"resolved_unknowns\": [{\"local_ref\": \"r1\", \"kind\": \"resolves\", \"source\": \"c1\", \"target\": \"projection unknown id\"}],\n  \"next_investigation\": \"required: the one thing to look at next\",\n  \"qac_request\": {\n    \"direction\": \"escalate\" | \"release\",\n    \"uncertainty\": 0.0-1.0,\n    \"novelty\": 0.0-1.0,\n    \"expected_gain\": 0.0-1.0,\n    \"failed_attempts\": 0,\n    \"reason\": \"\",\n    \"unresolved\": \"\",\n    \"evidence\": [\"\"],\n    \"attempted\": [\"\"],\n    \"recommended_focus\": \"\"\n  }\n}\n",
+        "output_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "boundaries": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "claims": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence_ref": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "text",
+                  "evidence_ref"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "classification": {
+              "type": "string"
+            },
+            "next_investigation": {
+              "type": "string"
+            },
+            "observations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "content"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "qac_request": {
+              "additionalProperties": false,
+              "properties": {
+                "attempted": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "expected_gain": {
+                  "type": "number"
+                },
+                "failed_attempts": {
+                  "type": "integer"
+                },
+                "novelty": {
+                  "type": "number"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "recommended_focus": {
+                  "type": "string"
+                },
+                "uncertainty": {
+                  "type": "number"
+                },
+                "unresolved": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "direction",
+                "uncertainty",
+                "novelty",
+                "expected_gain",
+                "failed_attempts",
+                "reason",
+                "unresolved",
+                "evidence",
+                "attempted",
+                "recommended_focus"
+              ],
+              "type": "object"
+            },
+            "resolved_unknowns": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "kind",
+                  "source",
+                  "target"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "unknowns": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "question": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "question"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "classification",
+            "boundaries",
+            "observations",
+            "claims",
+            "unknowns",
+            "resolved_unknowns",
+            "next_investigation",
+            "qac_request"
+          ],
+          "type": "object"
+        },
+        "allowed_tools": [
+          "read_file",
+          "run_check",
+          "write_file"
+        ],
+        "tool_enforcement": "declared_for_host_or_adapter; not_enforced_by_ces_mcp",
+        "isolation": {
+          "status": "not_attested",
+          "detail": "CES verifies dispatch references and projection boundaries. The host or runtime must enforce fresh agent context and tool isolation."
+        },
+        "created_at": "2026-11-09T20:08:44.772078Z"
+      },
+      {
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "abduce",
+        "state_version": 2,
+        "state_hash": "e3002e7f81e0584045a5c297662b46d9a203353b8657bf5bfda1195f02917481",
+        "projection_hash": "b146f321db4f3439c11b5d50088f49c6fc02cb268c563e789b387760a78be5a9",
+        "prompt_hash": "4abb1c1d3cd1a6ac8c72ce35116ec323c5fdd7c93ea5ab382bc316125d2809a4",
+        "session_id": "demo-fresh-context-2",
+        "mode": "host_managed",
+        "projection": {
+          "schema_version": "0.2.0",
+          "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+          "state_version": 2,
+          "state_hash": "e3002e7f81e0584045a5c297662b46d9a203353b8657bf5bfda1195f02917481",
+          "phase": "abduce",
+          "state": {
+            "task": {
+              "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+              "goal": "verify the reported regression",
+              "status": "active",
+              "phase": "abduce",
+              "reopen_count": 0,
+              "last_transition": {
+                "from": "triage",
+                "to": "abduce",
+                "reason": "accepted triage artifact"
+              },
+              "created_at": "2026-11-09T20:08:44.762668Z",
+              "updated_at": "2026-11-09T20:08:44.810859Z"
+            },
+            "observations": [
+              {
+                "id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "content": "the command reports the regression",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "claims": [
+              {
+                "id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "text": "the regression is reproducible",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "hypotheses": null,
+            "unknowns": [
+              {
+                "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+                "question": "does the fix pass the full check suite?",
+                "status": "open",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "constraints": null,
+            "frames": null,
+            "actions": null,
+            "outcomes": null,
+            "relations": [
+              {
+                "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "status": "active",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ]
+          },
+          "ids": [
+            "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+            "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+            "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+            "ces_fe5036ca7f164e0d7bc2977b2e05d70e"
+          ],
+          "evidence": [
+            {
+              "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+              "status": "active",
+              "provenance": {
+                "phase": "triage",
+                "process": "demo-fresh-context-1",
+                "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.801007Z"
+            }
+          ],
+          "accepted_decisions": [
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "artifact_acceptance",
+              "phase": "triage",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "reported regression",
+              "boundaries": [
+                "one service"
+              ],
+              "next_investigation": "compare the two execution paths",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 1,
+              "created_at": "2026-11-09T20:08:44.801049Z"
+            },
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "phase_transition",
+              "phase": "triage",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 2,
+              "created_at": "2026-11-09T20:08:44.810815Z"
+            }
+          ]
+        },
+        "instructions": "CES PHASE: ABDUCE\n\nThis phase contract overrides the normal instruction to complete the\nentire user task. Completing this phase artifact completes your current\nassignment. Ghost will decide what happens next.\n\nPURPOSE\nPropose competing mechanisms that would explain the triage evidence, and say which one currently leads.\n\nYOU MAY\n- Read code and run read-only commands to discriminate between mechanisms.\n- Propose several hypotheses, each with the observation that would falsify it.\n- Record supports and contradicts relations only when their source is an observation or claim in the projection. Unknown ids must never be relation sources; if no observation or claim supports a hypothesis, omit the relation and preserve the gap in remaining_uncertainty.\n- Reject a hypothesis only when a projected observation or claim contradicts it. Name the projected or local hypothesis ref and the evidence id in rejected_hypotheses; CES keeps the hypothesis and records the contradiction.\n- Name the leading hypothesis by its local_ref.\n\nYOU MUST NOT\n- Implement anything, or edit any production file.\n- Design the fix or the plan of work. That is the FRAME phase.\n- Assert a hypothesis as confirmed; confirmation happens in CLOSE.\n- Claim the task is complete, or continue into any later phase.\n\nRELATION AUTHORITY\n- supports: source observation, claim; target hypothesis\n- contradicts: source observation, claim; target hypothesis\n\nOUTPUT\nReturn ONLY one JSON object, exactly matching the schema below. No\nMarkdown, no code fence, no prose or commentary before or after it. Unknown fields are rejected.\nOmit any field you have nothing to say about. local_ref values are your\nown short labels (\"o1\", \"h1\"); they are rewritten into CES identifiers\nafter the artifact is accepted. Every source and target must be a\nlocal_ref you declared in this artifact or an id present in the\nprojection. Use projection_index to select an id of the required object kind;\ndo not infer an object's kind from its content. qac_request describes how hard this work is now; it does not\nname a resource and it does not name a phase.\n\n{\n  \"hypotheses\": [{\"local_ref\": \"h1\", \"mechanism\": \"required: how this would produce the symptom\", \"falsifier\": \"the observation that would kill it\"}],\n  \"rejected_hypotheses\": [{\"hypothesis_ref\": \"projection hypothesis id or hypothesis local_ref from this artifact\", \"evidence_ref\": \"projection observation or claim id\"}],\n  \"relations\": [{\"local_ref\": \"r1\", \"kind\": \"supports\" | \"contradicts\", \"source\": \"projection observation or claim id\", \"target\": \"h1\"}],\n  \"leading_hypothesis_ref\": \"required: h1\",\n  \"remaining_uncertainty\": \"\",\n  \"qac_request\": {\n    \"direction\": \"escalate\" | \"release\",\n    \"uncertainty\": 0.0-1.0,\n    \"novelty\": 0.0-1.0,\n    \"expected_gain\": 0.0-1.0,\n    \"failed_attempts\": 0,\n    \"reason\": \"\",\n    \"unresolved\": \"\",\n    \"evidence\": [\"\"],\n    \"attempted\": [\"\"],\n    \"recommended_focus\": \"\"\n  }\n}\n",
+        "output_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "hypotheses": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "falsifier": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "mechanism": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "mechanism",
+                  "falsifier"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "leading_hypothesis_ref": {
+              "type": "string"
+            },
+            "qac_request": {
+              "additionalProperties": false,
+              "properties": {
+                "attempted": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "expected_gain": {
+                  "type": "number"
+                },
+                "failed_attempts": {
+                  "type": "integer"
+                },
+                "novelty": {
+                  "type": "number"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "recommended_focus": {
+                  "type": "string"
+                },
+                "uncertainty": {
+                  "type": "number"
+                },
+                "unresolved": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "direction",
+                "uncertainty",
+                "novelty",
+                "expected_gain",
+                "failed_attempts",
+                "reason",
+                "unresolved",
+                "evidence",
+                "attempted",
+                "recommended_focus"
+              ],
+              "type": "object"
+            },
+            "rejected_hypotheses": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence_ref": {
+                    "type": "string"
+                  },
+                  "hypothesis_ref": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "hypothesis_ref",
+                  "evidence_ref"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "supports",
+                      "contradicts"
+                    ],
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "enum": [
+                      "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                      "ces_e3dd12d6da2fa1e3d380d3d5f17ed010"
+                    ],
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "kind",
+                  "source",
+                  "target"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "remaining_uncertainty": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "hypotheses",
+            "relations",
+            "leading_hypothesis_ref",
+            "remaining_uncertainty",
+            "qac_request"
+          ],
+          "type": "object"
+        },
+        "allowed_tools": [
+          "read_file",
+          "run_check",
+          "write_file"
+        ],
+        "tool_enforcement": "declared_for_host_or_adapter; not_enforced_by_ces_mcp",
+        "isolation": {
+          "status": "not_attested",
+          "detail": "CES verifies dispatch references and projection boundaries. The host or runtime must enforce fresh agent context and tool isolation."
+        },
+        "created_at": "2026-11-09T20:08:44.822592Z"
+      },
+      {
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "frame",
+        "state_version": 4,
+        "state_hash": "e8152e48c2f1ee86fb750768ae11f60393b4012367451389f0d3aad79a81e609",
+        "projection_hash": "82e3ad7285f408a469a839edbfa2f46b65d22314368aa122b2c56d6d767f36a2",
+        "prompt_hash": "eb8f67120332914f8b4d30907229bbfadd6ee9cd54313b9870421d4c8d5f7e1e",
+        "session_id": "demo-fresh-context-3",
+        "mode": "host_managed",
+        "projection": {
+          "schema_version": "0.2.0",
+          "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+          "state_version": 4,
+          "state_hash": "e8152e48c2f1ee86fb750768ae11f60393b4012367451389f0d3aad79a81e609",
+          "phase": "frame",
+          "state": {
+            "task": {
+              "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+              "goal": "verify the reported regression",
+              "status": "active",
+              "phase": "frame",
+              "reopen_count": 0,
+              "leading_hypothesis": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "last_transition": {
+                "from": "abduce",
+                "to": "frame",
+                "reason": "accepted abduce artifact"
+              },
+              "created_at": "2026-11-09T20:08:44.762668Z",
+              "updated_at": "2026-11-09T20:08:44.880551Z"
+            },
+            "observations": [
+              {
+                "id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "content": "the command reports the regression",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "claims": [
+              {
+                "id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "text": "the regression is reproducible",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "hypotheses": [
+              {
+                "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "mechanism": "the shared path mishandles the result",
+                "falsifier": "the shared path emits the expected result",
+                "status": "leading",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              }
+            ],
+            "unknowns": [
+              {
+                "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+                "question": "does the fix pass the full check suite?",
+                "status": "open",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "constraints": null,
+            "frames": null,
+            "actions": null,
+            "outcomes": null,
+            "relations": [
+              {
+                "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "status": "active",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              },
+              {
+                "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "status": "active",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              }
+            ]
+          },
+          "ids": [
+            "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+            "ces_a9d7ac79833f326b09c2d70a82c257e0",
+            "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+            "ces_ea4a8d4e371080dad860eca15bfde99f",
+            "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+            "ces_fe5036ca7f164e0d7bc2977b2e05d70e"
+          ],
+          "evidence": [
+            {
+              "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+              "status": "active",
+              "provenance": {
+                "phase": "triage",
+                "process": "demo-fresh-context-1",
+                "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.801007Z"
+            },
+            {
+              "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "status": "active",
+              "provenance": {
+                "phase": "abduce",
+                "process": "demo-fresh-context-2",
+                "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.863268Z"
+            }
+          ],
+          "accepted_decisions": [
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "artifact_acceptance",
+              "phase": "triage",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "reported regression",
+              "boundaries": [
+                "one service"
+              ],
+              "next_investigation": "compare the two execution paths",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 1,
+              "created_at": "2026-11-09T20:08:44.801049Z"
+            },
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "phase_transition",
+              "phase": "triage",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 2,
+              "created_at": "2026-11-09T20:08:44.810815Z"
+            },
+            {
+              "id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "kind": "artifact_acceptance",
+              "phase": "abduce",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "the shared path mishandles the result",
+              "uncertainty": "the provider path is not fully isolated",
+              "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "state_version": 3,
+              "created_at": "2026-11-09T20:08:44.863392Z"
+            },
+            {
+              "id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "kind": "phase_transition",
+              "phase": "abduce",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "state_version": 4,
+              "created_at": "2026-11-09T20:08:44.880546Z"
+            }
+          ]
+        },
+        "instructions": "CES PHASE: FRAME\n\nThis phase contract overrides the normal instruction to complete the\nentire user task. Completing this phase artifact completes your current\nassignment. Ghost will decide what happens next.\n\nPURPOSE\nTurn the leading hypothesis into one frame: what doing this work means, when it is done, and what would show the frame is wrong.\n\nYOU MAY\n- Read code and run read-only commands to size the work.\n- State the completion conditions the work must satisfy.\n- State the disconfirmation conditions that would invalidate this frame.\n- Record constraints the execution must respect.\n- Supersede an earlier frame by naming its projection id.\n\nYOU MUST NOT\n- Edit, create, delete, or revert any production file. Execution is the EXECUTE phase.\n- Run a build or test intended to verify a change you made.\n- Claim the task is complete, or continue into any later phase.\n\nRELATION AUTHORITY\n- depends_on: source frame; target hypothesis, constraint, frame\n- supersedes: source frame; target frame\n\nOUTPUT\nReturn ONLY one JSON object, exactly matching the schema below. No\nMarkdown, no code fence, no prose or commentary before or after it. Unknown fields are rejected.\nOmit any field you have nothing to say about. local_ref values are your\nown short labels (\"o1\", \"h1\"); they are rewritten into CES identifiers\nafter the artifact is accepted. Every source and target must be a\nlocal_ref you declared in this artifact or an id present in the\nprojection. Use projection_index to select an id of the required object kind;\ndo not infer an object's kind from its content. qac_request describes how hard this work is now; it does not\nname a resource and it does not name a phase.\n\n{\n  \"frame\": {\n    \"local_ref\": \"required: f1\",\n    \"name\": \"required: short name\",\n    \"summary\": \"required: what doing this work means\",\n    \"completion_conditions\": [\"\"],\n    \"disconfirmation_conditions\": [\"\"]\n  },\n  \"constraints\": [{\"local_ref\": \"k1\", \"text\": \"\"}],\n  \"relations\": [{\"local_ref\": \"r1\", \"kind\": \"depends_on\", \"source\": \"f1\", \"target\": \"projection hypothesis, constraint, or frame id\"}],\n  \"supersedes_frame_ref\": \"projection id of a frame this replaces, if any\",\n  \"qac_request\": {\n    \"direction\": \"escalate\" | \"release\",\n    \"uncertainty\": 0.0-1.0,\n    \"novelty\": 0.0-1.0,\n    \"expected_gain\": 0.0-1.0,\n    \"failed_attempts\": 0,\n    \"reason\": \"\",\n    \"unresolved\": \"\",\n    \"evidence\": [\"\"],\n    \"attempted\": [\"\"],\n    \"recommended_focus\": \"\"\n  }\n}\n",
+        "output_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "constraints": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "frame": {
+              "additionalProperties": false,
+              "properties": {
+                "completion_conditions": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "disconfirmation_conditions": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "local_ref": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "local_ref",
+                "name",
+                "summary",
+                "completion_conditions",
+                "disconfirmation_conditions"
+              ],
+              "type": "object"
+            },
+            "qac_request": {
+              "additionalProperties": false,
+              "properties": {
+                "attempted": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "expected_gain": {
+                  "type": "number"
+                },
+                "failed_attempts": {
+                  "type": "integer"
+                },
+                "novelty": {
+                  "type": "number"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "recommended_focus": {
+                  "type": "string"
+                },
+                "uncertainty": {
+                  "type": "number"
+                },
+                "unresolved": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "direction",
+                "uncertainty",
+                "novelty",
+                "expected_gain",
+                "failed_attempts",
+                "reason",
+                "unresolved",
+                "evidence",
+                "attempted",
+                "recommended_focus"
+              ],
+              "type": "object"
+            },
+            "relations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "kind",
+                  "source",
+                  "target"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "supersedes_frame_ref": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "frame",
+            "constraints",
+            "relations",
+            "supersedes_frame_ref",
+            "qac_request"
+          ],
+          "type": "object"
+        },
+        "allowed_tools": [
+          "read_file",
+          "run_check",
+          "write_file"
+        ],
+        "tool_enforcement": "declared_for_host_or_adapter; not_enforced_by_ces_mcp",
+        "isolation": {
+          "status": "not_attested",
+          "detail": "CES verifies dispatch references and projection boundaries. The host or runtime must enforce fresh agent context and tool isolation."
+        },
+        "created_at": "2026-11-09T20:08:44.895932Z"
+      },
+      {
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "execute",
+        "state_version": 6,
+        "state_hash": "8ccbca2d29305613eb92c394d8a661f754e194a354f1ea04cb550bef7be373c8",
+        "projection_hash": "eae8dfcac93e4889d0984cb771e5d5d1d1ca2a224b8bc0bd2555c82a1c2964d9",
+        "prompt_hash": "3d8e12585e18227047e62b347ea9a7ca5cf978e750c92af1c870c59334ae817d",
+        "session_id": "demo-fresh-context-4",
+        "mode": "host_managed",
+        "projection": {
+          "schema_version": "0.2.0",
+          "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+          "state_version": 6,
+          "state_hash": "8ccbca2d29305613eb92c394d8a661f754e194a354f1ea04cb550bef7be373c8",
+          "phase": "execute",
+          "state": {
+            "task": {
+              "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+              "goal": "verify the reported regression",
+              "status": "active",
+              "phase": "execute",
+              "reopen_count": 0,
+              "leading_hypothesis": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "active_frame": "ces_8fc084c2518d8dd30fdbffec6100572f",
+              "last_transition": {
+                "from": "frame",
+                "to": "execute",
+                "reason": "accepted frame artifact"
+              },
+              "created_at": "2026-11-09T20:08:44.762668Z",
+              "updated_at": "2026-11-09T20:08:44.959883Z"
+            },
+            "observations": [
+              {
+                "id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "content": "the command reports the regression",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "claims": [
+              {
+                "id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "text": "the regression is reproducible",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "hypotheses": [
+              {
+                "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "mechanism": "the shared path mishandles the result",
+                "falsifier": "the shared path emits the expected result",
+                "status": "leading",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              }
+            ],
+            "unknowns": [
+              {
+                "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+                "question": "does the fix pass the full check suite?",
+                "status": "open",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "constraints": [
+              {
+                "id": "ces_a3d4896fb82303efa360697057543de5",
+                "text": "preserve the external result format",
+                "provenance": {
+                  "phase": "frame",
+                  "process": "demo-fresh-context-3",
+                  "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+                "created_at": "2026-11-09T20:08:44.945349Z"
+              }
+            ],
+            "frames": [
+              {
+                "id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+                "name": "fix shared result handling",
+                "summary": "change the shared path and check its consumers",
+                "completion_conditions": [
+                  "all checks pass"
+                ],
+                "disconfirmation_conditions": [
+                  "the regression still reproduces"
+                ],
+                "status": "active",
+                "provenance": {
+                  "phase": "frame",
+                  "process": "demo-fresh-context-3",
+                  "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+                "created_at": "2026-11-09T20:08:44.945349Z"
+              }
+            ],
+            "actions": null,
+            "outcomes": null,
+            "relations": [
+              {
+                "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "status": "active",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              },
+              {
+                "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "status": "active",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              },
+              {
+                "id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+                "kind": "depends_on",
+                "source_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+                "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "status": "active",
+                "provenance": {
+                  "phase": "frame",
+                  "process": "demo-fresh-context-3",
+                  "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+                "created_at": "2026-11-09T20:08:44.945349Z"
+              }
+            ]
+          },
+          "ids": [
+            "ces_8fc084c2518d8dd30fdbffec6100572f",
+            "ces_a3d4896fb82303efa360697057543de5",
+            "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+            "ces_a9d7ac79833f326b09c2d70a82c257e0",
+            "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+            "ces_e73bf4ad05e2afc785c72734718d10bf",
+            "ces_ea4a8d4e371080dad860eca15bfde99f",
+            "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+            "ces_fe5036ca7f164e0d7bc2977b2e05d70e"
+          ],
+          "evidence": [
+            {
+              "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+              "status": "active",
+              "provenance": {
+                "phase": "triage",
+                "process": "demo-fresh-context-1",
+                "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.801007Z"
+            },
+            {
+              "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "status": "active",
+              "provenance": {
+                "phase": "abduce",
+                "process": "demo-fresh-context-2",
+                "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.863268Z"
+            },
+            {
+              "id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+              "kind": "depends_on",
+              "source_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+              "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "status": "active",
+              "provenance": {
+                "phase": "frame",
+                "process": "demo-fresh-context-3",
+                "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.945349Z"
+            }
+          ],
+          "accepted_decisions": [
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "artifact_acceptance",
+              "phase": "triage",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "reported regression",
+              "boundaries": [
+                "one service"
+              ],
+              "next_investigation": "compare the two execution paths",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 1,
+              "created_at": "2026-11-09T20:08:44.801049Z"
+            },
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "phase_transition",
+              "phase": "triage",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 2,
+              "created_at": "2026-11-09T20:08:44.810815Z"
+            },
+            {
+              "id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "kind": "artifact_acceptance",
+              "phase": "abduce",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "the shared path mishandles the result",
+              "uncertainty": "the provider path is not fully isolated",
+              "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "state_version": 3,
+              "created_at": "2026-11-09T20:08:44.863392Z"
+            },
+            {
+              "id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "kind": "phase_transition",
+              "phase": "abduce",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "state_version": 4,
+              "created_at": "2026-11-09T20:08:44.880546Z"
+            },
+            {
+              "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "kind": "artifact_acceptance",
+              "phase": "frame",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "fix shared result handling: change the shared path and check its consumers",
+              "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+              "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "state_version": 5,
+              "created_at": "2026-11-09T20:08:44.945443Z"
+            },
+            {
+              "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "kind": "phase_transition",
+              "phase": "frame",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+              "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "state_version": 6,
+              "created_at": "2026-11-09T20:08:44.959879Z"
+            }
+          ]
+        },
+        "instructions": "CES PHASE: EXECUTE\n\nThis phase contract overrides the normal instruction to complete the\nentire user task. Completing this phase artifact completes your current\nassignment. Ghost will decide what happens next.\n\nPURPOSE\nCarry out the work the active frame describes, and record what each action actually produced.\n\nYOU MAY\n- Edit files and run commands in service of the active frame.\n- Record each action taken, the outcome it produced, and the observations behind them.\n- Report progress only as a model report. Ghost keeps this distinct from verified execution evidence.\n- Record a contradicts relation against the frame, the leading hypothesis, an action, or an outcome when the evidence goes against it.\n\nYOU MUST NOT\n- Work outside the active frame, or silently reframe the task. If the frame is wrong, record the contradicting evidence and stop.\n- Replace the frame or propose a new hypothesis; surface the contradiction instead and let Ghost route.\n- Declare the change verified, or claim the task is complete. Verification is the CLOSE phase.\n\nRELATION AUTHORITY\n- contradicts: source observation, claim; target claim, hypothesis, frame, action, outcome\n- implements: source action; target frame, constraint, hypothesis\n\nOUTPUT\nReturn ONLY one JSON object, exactly matching the schema below. No\nMarkdown, no code fence, no prose or commentary before or after it. Unknown fields are rejected.\nOmit any field you have nothing to say about. local_ref values are your\nown short labels (\"o1\", \"h1\"); they are rewritten into CES identifiers\nafter the artifact is accepted. Every source and target must be a\nlocal_ref you declared in this artifact or an id present in the\nprojection. Use projection_index to select an id of the required object kind;\ndo not infer an object's kind from its content. qac_request describes how hard this work is now; it does not\nname a resource and it does not name a phase.\n\n{\n  \"observations\": [{\"local_ref\": \"o1\", \"content\": \"what you saw while doing the work\"}],\n  \"actions\": [{\"local_ref\": \"a1\", \"description\": \"what you did\"}],\n  \"outcomes\": [{\"local_ref\": \"x1\", \"description\": \"what it produced\"}],\n  \"reported_progress\": {\"state\": \"unknown\" | \"low\" | \"meaningful\"},\n  \"relations\": [\n    {\"local_ref\": \"r1\", \"kind\": \"contradicts\", \"source\": \"o1 or a projection observation or claim id\", \"target\": \"projection claim, hypothesis, frame, action, or outcome id\"},\n    {\"local_ref\": \"r2\", \"kind\": \"implements\", \"source\": \"a1\", \"target\": \"projection frame, constraint, or hypothesis id\"}\n  ],\n  \"qac_request\": {\n    \"direction\": \"escalate\" | \"release\",\n    \"uncertainty\": 0.0-1.0,\n    \"novelty\": 0.0-1.0,\n    \"expected_gain\": 0.0-1.0,\n    \"failed_attempts\": 0,\n    \"reason\": \"\",\n    \"unresolved\": \"\",\n    \"evidence\": [\"\"],\n    \"attempted\": [\"\"],\n    \"recommended_focus\": \"\"\n  }\n}\n",
+        "output_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "actions": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "description"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "observations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "content"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "outcomes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "description"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "qac_request": {
+              "additionalProperties": false,
+              "properties": {
+                "attempted": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "expected_gain": {
+                  "type": "number"
+                },
+                "failed_attempts": {
+                  "type": "integer"
+                },
+                "novelty": {
+                  "type": "number"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "recommended_focus": {
+                  "type": "string"
+                },
+                "uncertainty": {
+                  "type": "number"
+                },
+                "unresolved": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "direction",
+                "uncertainty",
+                "novelty",
+                "expected_gain",
+                "failed_attempts",
+                "reason",
+                "unresolved",
+                "evidence",
+                "attempted",
+                "recommended_focus"
+              ],
+              "type": "object"
+            },
+            "relations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "kind",
+                  "source",
+                  "target"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "reported_progress": {
+              "additionalProperties": false,
+              "properties": {
+                "state": {
+                  "enum": [
+                    "unknown",
+                    "low",
+                    "meaningful"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "state"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "observations",
+            "actions",
+            "outcomes",
+            "relations",
+            "qac_request"
+          ],
+          "type": "object"
+        },
+        "allowed_tools": [
+          "read_file",
+          "run_check",
+          "write_file"
+        ],
+        "tool_enforcement": "declared_for_host_or_adapter; not_enforced_by_ces_mcp",
+        "isolation": {
+          "status": "not_attested",
+          "detail": "CES verifies dispatch references and projection boundaries. The host or runtime must enforce fresh agent context and tool isolation."
+        },
+        "created_at": "2026-11-09T20:08:44.977074Z"
+      },
+      {
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "close",
+        "state_version": 8,
+        "state_hash": "6d52021116c9b8f1f18aeb244e8f143da34ca014f004c2dcf61b61f457d26959",
+        "projection_hash": "54582c7f26b6560280e55a2352b0efd6c5bdc745bbc623bce52db52a5a1db08b",
+        "prompt_hash": "f81c7e28fa8bd772390dc7be9a34cdf5635dcd07746fcc89ae1da6e3d26dd570",
+        "session_id": "demo-fresh-context-5",
+        "mode": "host_managed",
+        "projection": {
+          "schema_version": "0.2.0",
+          "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+          "state_version": 8,
+          "state_hash": "6d52021116c9b8f1f18aeb244e8f143da34ca014f004c2dcf61b61f457d26959",
+          "phase": "close",
+          "state": {
+            "task": {
+              "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+              "goal": "verify the reported regression",
+              "status": "active",
+              "phase": "close",
+              "reopen_count": 0,
+              "leading_hypothesis": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "active_frame": "ces_8fc084c2518d8dd30fdbffec6100572f",
+              "last_transition": {
+                "from": "execute",
+                "to": "close",
+                "reason": "accepted execute artifact"
+              },
+              "created_at": "2026-11-09T20:08:44.762668Z",
+              "updated_at": "2026-11-09T20:08:45.049657Z"
+            },
+            "observations": [
+              {
+                "id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "content": "the command reports the regression",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              },
+              {
+                "id": "ces_bfd41b0b4c6b1264cdbe3a80dd0394e7",
+                "content": "all checks pass after the change",
+                "provenance": {
+                  "phase": "execute",
+                  "process": "demo-fresh-context-4",
+                  "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+                "created_at": "2026-11-09T20:08:45.037551Z"
+              }
+            ],
+            "claims": [
+              {
+                "id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "text": "the regression is reproducible",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "hypotheses": [
+              {
+                "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "mechanism": "the shared path mishandles the result",
+                "falsifier": "the shared path emits the expected result",
+                "status": "leading",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              },
+              {
+                "id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+                "mechanism": "the provider returned incomplete data",
+                "falsifier": "the provider payload is complete",
+                "status": "rejected",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              }
+            ],
+            "unknowns": [
+              {
+                "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+                "question": "does the fix pass the full check suite?",
+                "status": "open",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              }
+            ],
+            "constraints": [
+              {
+                "id": "ces_a3d4896fb82303efa360697057543de5",
+                "text": "preserve the external result format",
+                "provenance": {
+                  "phase": "frame",
+                  "process": "demo-fresh-context-3",
+                  "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+                "created_at": "2026-11-09T20:08:44.945349Z"
+              }
+            ],
+            "frames": [
+              {
+                "id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+                "name": "fix shared result handling",
+                "summary": "change the shared path and check its consumers",
+                "completion_conditions": [
+                  "all checks pass"
+                ],
+                "disconfirmation_conditions": [
+                  "the regression still reproduces"
+                ],
+                "status": "active",
+                "provenance": {
+                  "phase": "frame",
+                  "process": "demo-fresh-context-3",
+                  "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+                "created_at": "2026-11-09T20:08:44.945349Z"
+              }
+            ],
+            "actions": [
+              {
+                "id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+                "description": "updated the shared result handling",
+                "status": "recorded",
+                "provenance": {
+                  "phase": "execute",
+                  "process": "demo-fresh-context-4",
+                  "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+                "created_at": "2026-11-09T20:08:45.037551Z"
+              }
+            ],
+            "outcomes": [
+              {
+                "id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+                "description": "all checks pass after the change",
+                "provenance": {
+                  "phase": "execute",
+                  "process": "demo-fresh-context-4",
+                  "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+                "created_at": "2026-11-09T20:08:45.037551Z"
+              }
+            ],
+            "relations": [
+              {
+                "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+                "status": "active",
+                "provenance": {
+                  "phase": "triage",
+                  "process": "demo-fresh-context-1",
+                  "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+                "created_at": "2026-11-09T20:08:44.801007Z"
+              },
+              {
+                "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+                "kind": "supports",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "status": "active",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              },
+              {
+                "id": "ces_43c3fa4aec004676cc209872058e91bf",
+                "kind": "contradicts",
+                "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+                "target_id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+                "status": "active",
+                "provenance": {
+                  "phase": "abduce",
+                  "process": "demo-fresh-context-2",
+                  "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+                "created_at": "2026-11-09T20:08:44.863268Z"
+              },
+              {
+                "id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+                "kind": "depends_on",
+                "source_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+                "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+                "status": "active",
+                "provenance": {
+                  "phase": "frame",
+                  "process": "demo-fresh-context-3",
+                  "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+                "created_at": "2026-11-09T20:08:44.945349Z"
+              },
+              {
+                "id": "ces_83740477f768ee687af98c3e401e5f5d",
+                "kind": "implements",
+                "source_id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+                "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+                "status": "active",
+                "provenance": {
+                  "phase": "execute",
+                  "process": "demo-fresh-context-4",
+                  "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+                "created_at": "2026-11-09T20:08:45.037551Z"
+              },
+              {
+                "id": "ces_fe93f6d13eced804206875f8d5685ba7",
+                "kind": "tests",
+                "source_id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+                "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+                "status": "active",
+                "provenance": {
+                  "phase": "execute",
+                  "process": "demo-fresh-context-4",
+                  "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                  "runtime": "host_managed",
+                  "model": "external-agent"
+                },
+                "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+                "created_at": "2026-11-09T20:08:45.037551Z"
+              }
+            ]
+          },
+          "ids": [
+            "ces_183d2cf9dda9adc52358c9531276bf7c",
+            "ces_43c3fa4aec004676cc209872058e91bf",
+            "ces_83740477f768ee687af98c3e401e5f5d",
+            "ces_8fc084c2518d8dd30fdbffec6100572f",
+            "ces_a3d4896fb82303efa360697057543de5",
+            "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+            "ces_a9d7ac79833f326b09c2d70a82c257e0",
+            "ces_bfd41b0b4c6b1264cdbe3a80dd0394e7",
+            "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+            "ces_cb6b9f191a736000f1d85f68db026bf2",
+            "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+            "ces_e73bf4ad05e2afc785c72734718d10bf",
+            "ces_ea4a8d4e371080dad860eca15bfde99f",
+            "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+            "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+            "ces_fe93f6d13eced804206875f8d5685ba7"
+          ],
+          "evidence": [
+            {
+              "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+              "status": "active",
+              "provenance": {
+                "phase": "triage",
+                "process": "demo-fresh-context-1",
+                "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.801007Z"
+            },
+            {
+              "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+              "kind": "supports",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "status": "active",
+              "provenance": {
+                "phase": "abduce",
+                "process": "demo-fresh-context-2",
+                "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.863268Z"
+            },
+            {
+              "id": "ces_43c3fa4aec004676cc209872058e91bf",
+              "kind": "contradicts",
+              "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target_id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+              "status": "active",
+              "provenance": {
+                "phase": "abduce",
+                "process": "demo-fresh-context-2",
+                "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.863268Z"
+            },
+            {
+              "id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+              "kind": "depends_on",
+              "source_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+              "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+              "status": "active",
+              "provenance": {
+                "phase": "frame",
+                "process": "demo-fresh-context-3",
+                "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:44.945349Z"
+            },
+            {
+              "id": "ces_83740477f768ee687af98c3e401e5f5d",
+              "kind": "implements",
+              "source_id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+              "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+              "status": "active",
+              "provenance": {
+                "phase": "execute",
+                "process": "demo-fresh-context-4",
+                "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:45.037551Z"
+            },
+            {
+              "id": "ces_fe93f6d13eced804206875f8d5685ba7",
+              "kind": "tests",
+              "source_id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+              "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+              "status": "active",
+              "provenance": {
+                "phase": "execute",
+                "process": "demo-fresh-context-4",
+                "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+                "runtime": "host_managed",
+                "model": "external-agent"
+              },
+              "created_at": "2026-11-09T20:08:45.037551Z"
+            }
+          ],
+          "accepted_decisions": [
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "artifact_acceptance",
+              "phase": "triage",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "reported regression",
+              "boundaries": [
+                "one service"
+              ],
+              "next_investigation": "compare the two execution paths",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 1,
+              "created_at": "2026-11-09T20:08:44.801049Z"
+            },
+            {
+              "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "kind": "phase_transition",
+              "phase": "triage",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+              "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+              "state_version": 2,
+              "created_at": "2026-11-09T20:08:44.810815Z"
+            },
+            {
+              "id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "kind": "artifact_acceptance",
+              "phase": "abduce",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "the shared path mishandles the result",
+              "uncertainty": "the provider path is not fully isolated",
+              "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "state_version": 3,
+              "created_at": "2026-11-09T20:08:44.863392Z"
+            },
+            {
+              "id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "kind": "phase_transition",
+              "phase": "abduce",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+              "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+              "state_version": 4,
+              "created_at": "2026-11-09T20:08:44.880546Z"
+            },
+            {
+              "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "kind": "artifact_acceptance",
+              "phase": "frame",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "fix shared result handling: change the shared path and check its consumers",
+              "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+              "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "state_version": 5,
+              "created_at": "2026-11-09T20:08:44.945443Z"
+            },
+            {
+              "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "kind": "phase_transition",
+              "phase": "frame",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+              "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+              "state_version": 6,
+              "created_at": "2026-11-09T20:08:44.959879Z"
+            },
+            {
+              "id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+              "kind": "artifact_acceptance",
+              "phase": "execute",
+              "decision": "accepted",
+              "reason": "state engine validation passed",
+              "summary": "all checks pass after the change",
+              "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+              "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+              "state_version": 7,
+              "created_at": "2026-11-09T20:08:45.037625Z"
+            },
+            {
+              "id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+              "kind": "phase_transition",
+              "phase": "execute",
+              "decision": "advanced",
+              "reason": "accepted phase artifact",
+              "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+              "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+              "state_version": 8,
+              "created_at": "2026-11-09T20:08:45.049655Z"
+            }
+          ]
+        },
+        "instructions": "CES PHASE: CLOSE\n\nThis phase contract overrides the normal instruction to complete the\nentire user task. Completing this phase artifact completes your current\nassignment. Ghost will decide what happens next.\n\nPURPOSE\nTry to falsify the work. Check the frame's completion conditions against reality and report what you found.\n\nYOU MAY\n- Run tests, builds, and read-only checks that could disconfirm the work, and record what they produced as observations.\n- Record contradicts or tests relations between the verification evidence and the leading hypothesis, frame, actions, or outcomes.\n- Resolve an unknown only when a new observation or claim answers it; outcomes are not resolution evidence.\n- State the residual uncertainty honestly, including what you did not check.\n- Recommend completion. Ghost decides whether work completes; your recommendation is evidence, not a verdict.\n\nYOU MUST NOT\n- Repair anything you find broken. Record the contradicting evidence instead; Ghost will route the repair.\n- Suppress, soften, or omit a failure in order to close.\n- Set the work status, or declare the task complete on your own authority.\n\nRELATION AUTHORITY\n- contradicts: source observation, claim; target claim, hypothesis, frame, action, outcome\n- tests: source observation, claim, outcome; target action, outcome, hypothesis, frame\n- resolves: source observation, claim; target unknown\n\nOUTPUT\nReturn ONLY one JSON object, exactly matching the schema below. No\nMarkdown, no code fence, no prose or commentary before or after it. Unknown fields are rejected.\nOmit any field you have nothing to say about. local_ref values are your\nown short labels (\"o1\", \"h1\"); they are rewritten into CES identifiers\nafter the artifact is accepted. Every source and target must be a\nlocal_ref you declared in this artifact or an id present in the\nprojection. Use projection_index to select an id of the required object kind;\ndo not infer an object's kind from its content. qac_request describes how hard this work is now; it does not\nname a resource and it does not name a phase.\n\n{\n  \"observations\": [{\"local_ref\": \"o1\", \"content\": \"what the verification produced\"}],\n  \"relations\": [\n    {\"local_ref\": \"r1\", \"kind\": \"contradicts\", \"source\": \"o1 or a projection observation or claim id\", \"target\": \"projection claim, hypothesis, frame, action, or outcome id\"},\n    {\"local_ref\": \"r2\", \"kind\": \"tests\", \"source\": \"o1 or a projection observation, claim, or outcome id\", \"target\": \"projection action, outcome, hypothesis, or frame id\"}\n  ],\n  \"resolved_unknowns\": [{\"local_ref\": \"r3\", \"kind\": \"resolves\", \"source\": \"o1 or a projection observation or claim id\", \"target\": \"projection unknown id\"}],\n  \"residual_uncertainty\": \"what remains unchecked or unexplained\",\n  \"completion_recommended\": true,\n  \"qac_request\": {\n    \"direction\": \"escalate\" | \"release\",\n    \"uncertainty\": 0.0-1.0,\n    \"novelty\": 0.0-1.0,\n    \"expected_gain\": 0.0-1.0,\n    \"failed_attempts\": 0,\n    \"reason\": \"\",\n    \"unresolved\": \"\",\n    \"evidence\": [\"\"],\n    \"attempted\": [\"\"],\n    \"recommended_focus\": \"\"\n  }\n}\n",
+        "output_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "completion_recommended": {
+              "type": "boolean"
+            },
+            "observations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "content"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "qac_request": {
+              "additionalProperties": false,
+              "properties": {
+                "attempted": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "expected_gain": {
+                  "type": "number"
+                },
+                "failed_attempts": {
+                  "type": "integer"
+                },
+                "novelty": {
+                  "type": "number"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "recommended_focus": {
+                  "type": "string"
+                },
+                "uncertainty": {
+                  "type": "number"
+                },
+                "unresolved": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "direction",
+                "uncertainty",
+                "novelty",
+                "expected_gain",
+                "failed_attempts",
+                "reason",
+                "unresolved",
+                "evidence",
+                "attempted",
+                "recommended_focus"
+              ],
+              "type": "object"
+            },
+            "relations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "kind",
+                  "source",
+                  "target"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "residual_uncertainty": {
+              "type": "string"
+            },
+            "resolved_unknowns": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "local_ref": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "local_ref",
+                  "kind",
+                  "source",
+                  "target"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "observations",
+            "relations",
+            "resolved_unknowns",
+            "residual_uncertainty",
+            "completion_recommended",
+            "qac_request"
+          ],
+          "type": "object"
+        },
+        "allowed_tools": [
+          "read_file",
+          "run_check",
+          "write_file"
+        ],
+        "tool_enforcement": "declared_for_host_or_adapter; not_enforced_by_ces_mcp",
+        "isolation": {
+          "status": "not_attested",
+          "detail": "CES verifies dispatch references and projection boundaries. The host or runtime must enforce fresh agent context and tool isolation."
+        },
+        "created_at": "2026-11-09T20:08:45.064465Z"
+      }
+    ],
+    "submissions": [
+      {
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "idempotency_key": "demo-submit-triage",
+        "result": {
+          "boundaries": [
+            "one service"
+          ],
+          "claims": [
+            {
+              "evidence_ref": "o1",
+              "local_ref": "c1",
+              "text": "the regression is reproducible"
+            }
+          ],
+          "classification": "reported regression",
+          "next_investigation": "compare the two execution paths",
+          "observations": [
+            {
+              "content": "the command reports the regression",
+              "local_ref": "o1"
+            }
+          ],
+          "qac_request": {
+            "attempted": [],
+            "direction": "release",
+            "evidence": [],
+            "expected_gain": 0.4,
+            "failed_attempts": 0,
+            "novelty": 0.2,
+            "reason": "",
+            "recommended_focus": "",
+            "uncertainty": 0.3,
+            "unresolved": ""
+          },
+          "resolved_unknowns": [],
+          "unknowns": [
+            {
+              "local_ref": "u1",
+              "question": "does the fix pass the full check suite?"
+            }
+          ]
+        },
+        "result_hash": "b13278a29bd8873a24acacd10e0e7f5f8d1b38b53276e776c99a9b2da3dfe23b",
+        "validation_status": "valid",
+        "created_at": "2026-11-09T20:08:44.781988Z"
+      },
+      {
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "idempotency_key": "demo-submit-abduce",
+        "result": {
+          "hypotheses": [
+            {
+              "falsifier": "the shared path emits the expected result",
+              "local_ref": "h1",
+              "mechanism": "the shared path mishandles the result"
+            },
+            {
+              "falsifier": "the provider payload is complete",
+              "local_ref": "h2",
+              "mechanism": "the provider returned incomplete data"
+            }
+          ],
+          "leading_hypothesis_ref": "h1",
+          "qac_request": {
+            "attempted": [],
+            "direction": "release",
+            "evidence": [],
+            "expected_gain": 0.4,
+            "failed_attempts": 0,
+            "novelty": 0.2,
+            "reason": "",
+            "recommended_focus": "",
+            "uncertainty": 0.3,
+            "unresolved": ""
+          },
+          "rejected_hypotheses": [
+            {
+              "evidence_ref": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "hypothesis_ref": "h2"
+            }
+          ],
+          "relations": [
+            {
+              "kind": "supports",
+              "local_ref": "r1",
+              "source": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target": "h1"
+            },
+            {
+              "kind": "contradicts",
+              "local_ref": "r2",
+              "source": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+              "target": "h2"
+            }
+          ],
+          "remaining_uncertainty": "the provider path is not fully isolated"
+        },
+        "result_hash": "c5b65c9ca4d18a1343e741e204a01ee40bc6c7efb436373a35e17eb71008c77a",
+        "validation_status": "valid",
+        "created_at": "2026-11-09T20:08:44.834673Z"
+      },
+      {
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "idempotency_key": "demo-submit-frame",
+        "result": {
+          "constraints": [
+            {
+              "local_ref": "k1",
+              "text": "preserve the external result format"
+            }
+          ],
+          "frame": {
+            "completion_conditions": [
+              "all checks pass"
+            ],
+            "disconfirmation_conditions": [
+              "the regression still reproduces"
+            ],
+            "local_ref": "f1",
+            "name": "fix shared result handling",
+            "summary": "change the shared path and check its consumers"
+          },
+          "qac_request": {
+            "attempted": [],
+            "direction": "release",
+            "evidence": [],
+            "expected_gain": 0.4,
+            "failed_attempts": 0,
+            "novelty": 0.2,
+            "reason": "",
+            "recommended_focus": "",
+            "uncertainty": 0.3,
+            "unresolved": ""
+          },
+          "relations": [
+            {
+              "kind": "depends_on",
+              "local_ref": "r1",
+              "source": "f1",
+              "target": "ces_ea4a8d4e371080dad860eca15bfde99f"
+            }
+          ],
+          "supersedes_frame_ref": ""
+        },
+        "result_hash": "38e6f3a8a9076e483e9316056fadb8916d01b59cb47a2fe0b22b62a8275ba604",
+        "validation_status": "valid",
+        "created_at": "2026-11-09T20:08:44.911858Z"
+      },
+      {
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "idempotency_key": "demo-submit-execute",
+        "result": {
+          "actions": [
+            {
+              "description": "updated the shared result handling",
+              "local_ref": "a1"
+            }
+          ],
+          "observations": [
+            {
+              "content": "all checks pass after the change",
+              "local_ref": "o2"
+            }
+          ],
+          "outcomes": [
+            {
+              "description": "all checks pass after the change",
+              "local_ref": "x1"
+            }
+          ],
+          "qac_request": {
+            "attempted": [],
+            "direction": "release",
+            "evidence": [],
+            "expected_gain": 0.4,
+            "failed_attempts": 0,
+            "novelty": 0.2,
+            "reason": "",
+            "recommended_focus": "",
+            "uncertainty": 0.3,
+            "unresolved": ""
+          },
+          "relations": [
+            {
+              "kind": "implements",
+              "local_ref": "r1",
+              "source": "a1",
+              "target": "ces_8fc084c2518d8dd30fdbffec6100572f"
+            },
+            {
+              "kind": "tests",
+              "local_ref": "r2",
+              "source": "x1",
+              "target": "ces_8fc084c2518d8dd30fdbffec6100572f"
+            }
+          ]
+        },
+        "result_hash": "8e2dd9fc0990a458503930b7e66e0e3d73589184774201b9592711e0fa10c325",
+        "validation_status": "valid",
+        "created_at": "2026-11-09T20:08:44.993471Z"
+      },
+      {
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "idempotency_key": "demo-submit-close",
+        "result": {
+          "completion_recommended": true,
+          "observations": [
+            {
+              "content": "all checks pass",
+              "local_ref": "o3"
+            }
+          ],
+          "qac_request": {
+            "attempted": [],
+            "direction": "release",
+            "evidence": [],
+            "expected_gain": 0.4,
+            "failed_attempts": 0,
+            "novelty": 0.2,
+            "reason": "",
+            "recommended_focus": "",
+            "uncertainty": 0.3,
+            "unresolved": ""
+          },
+          "relations": [
+            {
+              "kind": "tests",
+              "local_ref": "r1",
+              "source": "o3",
+              "target": "ces_8fc084c2518d8dd30fdbffec6100572f"
+            }
+          ],
+          "residual_uncertainty": "",
+          "resolved_unknowns": [
+            {
+              "kind": "resolves",
+              "local_ref": "r2",
+              "source": "o3",
+              "target": "ces_fe5036ca7f164e0d7bc2977b2e05d70e"
+            }
+          ]
+        },
+        "result_hash": "2c7758a647affea165cf49ba3c003f6f11e0b3c23a9ba5d8fc8dc0c482c1f8f6",
+        "validation_status": "valid",
+        "created_at": "2026-11-09T20:08:45.078048Z"
+      }
+    ],
+    "submission_idempotency": {
+      "demo-submit-abduce": "prp_f7557343820a50d225e3d24ddc71a753",
+      "demo-submit-close": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+      "demo-submit-execute": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+      "demo-submit-frame": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+      "demo-submit-triage": "prp_6c1f9e399735949a66babc5e9edccbcf"
+    },
+    "accept_idempotency": {
+      "demo-accept-abduce": {
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "version": 3,
+        "state_hash": "af6f21652fbb84f12d574ab668613a6c2c938fb590660fbf6b14142720a0288f",
+        "decision": {
+          "id": "prp_f7557343820a50d225e3d24ddc71a753",
+          "kind": "artifact_acceptance",
+          "phase": "abduce",
+          "decision": "accepted",
+          "reason": "state engine validation passed",
+          "summary": "the shared path mishandles the result",
+          "uncertainty": "the provider path is not fully isolated",
+          "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+          "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+          "state_version": 3,
+          "created_at": "2026-11-09T20:08:44.863392Z"
+        }
+      },
+      "demo-accept-close": {
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "version": 9,
+        "state_hash": "10952ccc79192d3df0332f3124207bb10234f6c193e4e93c575b6f5d96075641",
+        "decision": {
+          "id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+          "kind": "artifact_acceptance",
+          "phase": "close",
+          "decision": "accepted",
+          "reason": "state engine validation passed",
+          "summary": "phase agent recommends completion",
+          "completion_recommended": true,
+          "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+          "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+          "state_version": 9,
+          "created_at": "2026-11-09T20:08:45.108302Z"
+        }
+      },
+      "demo-accept-execute": {
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "version": 7,
+        "state_hash": "f11552511e509677e6db79256d2ff2ec9d3c46ed6e8eafe8044d09b9e3fbd8c0",
+        "decision": {
+          "id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+          "kind": "artifact_acceptance",
+          "phase": "execute",
+          "decision": "accepted",
+          "reason": "state engine validation passed",
+          "summary": "all checks pass after the change",
+          "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+          "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+          "state_version": 7,
+          "created_at": "2026-11-09T20:08:45.037625Z"
+        }
+      },
+      "demo-accept-frame": {
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "version": 5,
+        "state_hash": "e7147e639edc80129de16c30316a022ec98f762ab05fa0119d75e8999b958d31",
+        "decision": {
+          "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+          "kind": "artifact_acceptance",
+          "phase": "frame",
+          "decision": "accepted",
+          "reason": "state engine validation passed",
+          "summary": "fix shared result handling: change the shared path and check its consumers",
+          "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+          "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+          "state_version": 5,
+          "created_at": "2026-11-09T20:08:44.945443Z"
+        }
+      },
+      "demo-accept-triage": {
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "version": 1,
+        "state_hash": "2b85cb11100750a11764ff5259106b4b75c8b1785c5308cd1149e0f3405498a4",
+        "decision": {
+          "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+          "kind": "artifact_acceptance",
+          "phase": "triage",
+          "decision": "accepted",
+          "reason": "state engine validation passed",
+          "summary": "reported regression",
+          "boundaries": [
+            "one service"
+          ],
+          "next_investigation": "compare the two execution paths",
+          "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+          "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+          "state_version": 1,
+          "created_at": "2026-11-09T20:08:44.801049Z"
+        }
+      }
+    },
+    "decisions": [
+      {
+        "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "kind": "artifact_acceptance",
+        "phase": "triage",
+        "decision": "accepted",
+        "reason": "state engine validation passed",
+        "summary": "reported regression",
+        "boundaries": [
+          "one service"
+        ],
+        "next_investigation": "compare the two execution paths",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "state_version": 1,
+        "created_at": "2026-11-09T20:08:44.801049Z"
+      },
+      {
+        "id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "kind": "phase_transition",
+        "phase": "triage",
+        "decision": "advanced",
+        "reason": "accepted phase artifact",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "state_version": 2,
+        "created_at": "2026-11-09T20:08:44.810815Z"
+      },
+      {
+        "id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "kind": "artifact_acceptance",
+        "phase": "abduce",
+        "decision": "accepted",
+        "reason": "state engine validation passed",
+        "summary": "the shared path mishandles the result",
+        "uncertainty": "the provider path is not fully isolated",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "state_version": 3,
+        "created_at": "2026-11-09T20:08:44.863392Z"
+      },
+      {
+        "id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "kind": "phase_transition",
+        "phase": "abduce",
+        "decision": "advanced",
+        "reason": "accepted phase artifact",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "state_version": 4,
+        "created_at": "2026-11-09T20:08:44.880546Z"
+      },
+      {
+        "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "kind": "artifact_acceptance",
+        "phase": "frame",
+        "decision": "accepted",
+        "reason": "state engine validation passed",
+        "summary": "fix shared result handling: change the shared path and check its consumers",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "state_version": 5,
+        "created_at": "2026-11-09T20:08:44.945443Z"
+      },
+      {
+        "id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "kind": "phase_transition",
+        "phase": "frame",
+        "decision": "advanced",
+        "reason": "accepted phase artifact",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "state_version": 6,
+        "created_at": "2026-11-09T20:08:44.959879Z"
+      },
+      {
+        "id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "kind": "artifact_acceptance",
+        "phase": "execute",
+        "decision": "accepted",
+        "reason": "state engine validation passed",
+        "summary": "all checks pass after the change",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "state_version": 7,
+        "created_at": "2026-11-09T20:08:45.037625Z"
+      },
+      {
+        "id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "kind": "phase_transition",
+        "phase": "execute",
+        "decision": "advanced",
+        "reason": "accepted phase artifact",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "state_version": 8,
+        "created_at": "2026-11-09T20:08:45.049655Z"
+      },
+      {
+        "id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "kind": "artifact_acceptance",
+        "phase": "close",
+        "decision": "accepted",
+        "reason": "state engine validation passed",
+        "summary": "phase agent recommends completion",
+        "completion_recommended": true,
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "state_version": 9,
+        "created_at": "2026-11-09T20:08:45.108302Z"
+      },
+      {
+        "id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "kind": "phase_transition",
+        "phase": "close",
+        "decision": "complete",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "state_version": 10,
+        "created_at": "2026-11-09T20:08:45.122102Z"
+      }
+    ],
+    "rejected_attempts": [],
+    "audit": [
+      {
+        "sequence": 1,
+        "kind": "phase_dispatched",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "triage",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "state_version": 0,
+        "detail": "host_managed",
+        "at": "2026-11-09T20:08:44.772079Z"
+      },
+      {
+        "sequence": 2,
+        "kind": "proposal_submitted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "triage",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "state_version": 0,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.7822Z"
+      },
+      {
+        "sequence": 3,
+        "kind": "proposal_validated",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "triage",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "state_version": 0,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.792051Z"
+      },
+      {
+        "sequence": 4,
+        "kind": "proposal_accepted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "triage",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "state_version": 1,
+        "detail": "accepted state committed",
+        "at": "2026-11-09T20:08:44.80105Z"
+      },
+      {
+        "sequence": 5,
+        "kind": "phase_advanced",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "triage",
+        "dispatch_id": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+        "proposal_id": "prp_6c1f9e399735949a66babc5e9edccbcf",
+        "state_version": 2,
+        "detail": "advanced",
+        "at": "2026-11-09T20:08:44.810864Z"
+      },
+      {
+        "sequence": 6,
+        "kind": "phase_dispatched",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "abduce",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "state_version": 2,
+        "detail": "host_managed",
+        "at": "2026-11-09T20:08:44.822593Z"
+      },
+      {
+        "sequence": 7,
+        "kind": "proposal_submitted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "abduce",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "state_version": 2,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.835771Z"
+      },
+      {
+        "sequence": 8,
+        "kind": "proposal_validated",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "abduce",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "state_version": 2,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.849041Z"
+      },
+      {
+        "sequence": 9,
+        "kind": "proposal_accepted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "abduce",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "state_version": 3,
+        "detail": "accepted state committed",
+        "at": "2026-11-09T20:08:44.863393Z"
+      },
+      {
+        "sequence": 10,
+        "kind": "phase_advanced",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "abduce",
+        "dispatch_id": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+        "proposal_id": "prp_f7557343820a50d225e3d24ddc71a753",
+        "state_version": 4,
+        "detail": "advanced",
+        "at": "2026-11-09T20:08:44.880567Z"
+      },
+      {
+        "sequence": 11,
+        "kind": "phase_dispatched",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "frame",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "state_version": 4,
+        "detail": "host_managed",
+        "at": "2026-11-09T20:08:44.895936Z"
+      },
+      {
+        "sequence": 12,
+        "kind": "proposal_submitted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "frame",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "state_version": 4,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.912658Z"
+      },
+      {
+        "sequence": 13,
+        "kind": "proposal_validated",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "frame",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "state_version": 4,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.926454Z"
+      },
+      {
+        "sequence": 14,
+        "kind": "proposal_accepted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "frame",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "state_version": 5,
+        "detail": "accepted state committed",
+        "at": "2026-11-09T20:08:44.945445Z"
+      },
+      {
+        "sequence": 15,
+        "kind": "phase_advanced",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "frame",
+        "dispatch_id": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+        "proposal_id": "prp_37fbdb2418ae1d749a6bb29aef708d62",
+        "state_version": 6,
+        "detail": "advanced",
+        "at": "2026-11-09T20:08:44.959897Z"
+      },
+      {
+        "sequence": 16,
+        "kind": "phase_dispatched",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "execute",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "state_version": 6,
+        "detail": "host_managed",
+        "at": "2026-11-09T20:08:44.977076Z"
+      },
+      {
+        "sequence": 17,
+        "kind": "proposal_submitted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "execute",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "state_version": 6,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:44.994312Z"
+      },
+      {
+        "sequence": 18,
+        "kind": "proposal_validated",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "execute",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "state_version": 6,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:45.022298Z"
+      },
+      {
+        "sequence": 19,
+        "kind": "proposal_accepted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "execute",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "state_version": 7,
+        "detail": "accepted state committed",
+        "at": "2026-11-09T20:08:45.037625Z"
+      },
+      {
+        "sequence": 20,
+        "kind": "phase_advanced",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "execute",
+        "dispatch_id": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+        "proposal_id": "prp_912f65ef82eac7732f1f68af7d9e38b3",
+        "state_version": 8,
+        "detail": "advanced",
+        "at": "2026-11-09T20:08:45.049695Z"
+      },
+      {
+        "sequence": 21,
+        "kind": "phase_dispatched",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "close",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "state_version": 8,
+        "detail": "host_managed",
+        "at": "2026-11-09T20:08:45.064466Z"
+      },
+      {
+        "sequence": 22,
+        "kind": "proposal_submitted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "close",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "state_version": 8,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:45.078812Z"
+      },
+      {
+        "sequence": 23,
+        "kind": "proposal_validated",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "close",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "state_version": 8,
+        "detail": "structured artifact passed validation",
+        "at": "2026-11-09T20:08:45.093747Z"
+      },
+      {
+        "sequence": 24,
+        "kind": "proposal_accepted",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "close",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "state_version": 9,
+        "detail": "accepted state committed",
+        "at": "2026-11-09T20:08:45.108303Z"
+      },
+      {
+        "sequence": 25,
+        "kind": "phase_advanced",
+        "run_id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+        "phase": "close",
+        "dispatch_id": "dsp_737ac4f475b7fdbfb636c324687fd462",
+        "proposal_id": "prp_773d5e6de50f6493244f2fd1cfa0f7ac",
+        "state_version": 10,
+        "detail": "complete",
+        "at": "2026-11-09T20:08:45.122132Z"
+      }
+    ]
+  },
+  "state": {
+    "task": {
+      "id": "ces_e8067c23c7826b712c3913c1dd2584b2",
+      "goal": "verify the reported regression",
+      "status": "complete",
+      "phase": "close",
+      "reopen_count": 0,
+      "leading_hypothesis": "ces_ea4a8d4e371080dad860eca15bfde99f",
+      "active_frame": "ces_8fc084c2518d8dd30fdbffec6100572f",
+      "last_transition": {
+        "from": "execute",
+        "to": "close",
+        "reason": "accepted execute artifact"
+      },
+      "created_at": "2026-11-09T20:08:44.762668Z",
+      "updated_at": "2026-11-09T20:08:45.122105Z"
+    },
+    "observations": [
+      {
+        "id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+        "content": "the command reports the regression",
+        "provenance": {
+          "phase": "triage",
+          "process": "demo-fresh-context-1",
+          "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "created_at": "2026-11-09T20:08:44.801007Z"
+      },
+      {
+        "id": "ces_bfd41b0b4c6b1264cdbe3a80dd0394e7",
+        "content": "all checks pass after the change",
+        "provenance": {
+          "phase": "execute",
+          "process": "demo-fresh-context-4",
+          "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "created_at": "2026-11-09T20:08:45.037551Z"
+      },
+      {
+        "id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+        "content": "all checks pass",
+        "provenance": {
+          "phase": "close",
+          "process": "demo-fresh-context-5",
+          "artifact": "dsp_737ac4f475b7fdbfb636c324687fd462",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "created_at": "2026-11-09T20:08:45.108253Z"
+      }
+    ],
+    "claims": [
+      {
+        "id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+        "text": "the regression is reproducible",
+        "provenance": {
+          "phase": "triage",
+          "process": "demo-fresh-context-1",
+          "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "created_at": "2026-11-09T20:08:44.801007Z"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+        "mechanism": "the shared path mishandles the result",
+        "falsifier": "the shared path emits the expected result",
+        "status": "confirmed",
+        "provenance": {
+          "phase": "abduce",
+          "process": "demo-fresh-context-2",
+          "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "created_at": "2026-11-09T20:08:44.863268Z"
+      },
+      {
+        "id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+        "mechanism": "the provider returned incomplete data",
+        "falsifier": "the provider payload is complete",
+        "status": "rejected",
+        "provenance": {
+          "phase": "abduce",
+          "process": "demo-fresh-context-2",
+          "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "created_at": "2026-11-09T20:08:44.863268Z"
+      }
+    ],
+    "unknowns": [
+      {
+        "id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+        "question": "does the fix pass the full check suite?",
+        "status": "resolved",
+        "provenance": {
+          "phase": "triage",
+          "process": "demo-fresh-context-1",
+          "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "created_at": "2026-11-09T20:08:44.801007Z"
+      }
+    ],
+    "constraints": [
+      {
+        "id": "ces_a3d4896fb82303efa360697057543de5",
+        "text": "preserve the external result format",
+        "provenance": {
+          "phase": "frame",
+          "process": "demo-fresh-context-3",
+          "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "created_at": "2026-11-09T20:08:44.945349Z"
+      }
+    ],
+    "frames": [
+      {
+        "id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "name": "fix shared result handling",
+        "summary": "change the shared path and check its consumers",
+        "completion_conditions": [
+          "all checks pass"
+        ],
+        "disconfirmation_conditions": [
+          "the regression still reproduces"
+        ],
+        "status": "active",
+        "provenance": {
+          "phase": "frame",
+          "process": "demo-fresh-context-3",
+          "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "created_at": "2026-11-09T20:08:44.945349Z"
+      }
+    ],
+    "actions": [
+      {
+        "id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+        "description": "updated the shared result handling",
+        "status": "recorded",
+        "provenance": {
+          "phase": "execute",
+          "process": "demo-fresh-context-4",
+          "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "created_at": "2026-11-09T20:08:45.037551Z"
+      }
+    ],
+    "outcomes": [
+      {
+        "id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+        "description": "all checks pass after the change",
+        "provenance": {
+          "phase": "execute",
+          "process": "demo-fresh-context-4",
+          "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "created_at": "2026-11-09T20:08:45.037551Z"
+      }
+    ],
+    "relations": [
+      {
+        "id": "ces_a89dd04b74b7ca69c5247eb15df7cac6",
+        "kind": "supports",
+        "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+        "target_id": "ces_e3dd12d6da2fa1e3d380d3d5f17ed010",
+        "status": "active",
+        "provenance": {
+          "phase": "triage",
+          "process": "demo-fresh-context-1",
+          "artifact": "dsp_fbf07c1721aa4fdadd3fc5b6af3573a5",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_634c14ba8bb8e568998aa107aacbc5b6",
+        "created_at": "2026-11-09T20:08:44.801007Z"
+      },
+      {
+        "id": "ces_a9d7ac79833f326b09c2d70a82c257e0",
+        "kind": "supports",
+        "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+        "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+        "status": "active",
+        "provenance": {
+          "phase": "abduce",
+          "process": "demo-fresh-context-2",
+          "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "created_at": "2026-11-09T20:08:44.863268Z"
+      },
+      {
+        "id": "ces_43c3fa4aec004676cc209872058e91bf",
+        "kind": "contradicts",
+        "source_id": "ces_ee5a4dbdd59782b3155b6ce5c65c8f0d",
+        "target_id": "ces_183d2cf9dda9adc52358c9531276bf7c",
+        "status": "active",
+        "provenance": {
+          "phase": "abduce",
+          "process": "demo-fresh-context-2",
+          "artifact": "dsp_2f322ef0b110cb90fa4b0f777eb812a9",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7e65debd6b9b49846f24d06c53d319b8",
+        "created_at": "2026-11-09T20:08:44.863268Z"
+      },
+      {
+        "id": "ces_e73bf4ad05e2afc785c72734718d10bf",
+        "kind": "depends_on",
+        "source_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "target_id": "ces_ea4a8d4e371080dad860eca15bfde99f",
+        "status": "active",
+        "provenance": {
+          "phase": "frame",
+          "process": "demo-fresh-context-3",
+          "artifact": "dsp_c7bb47a7dc5a7dae49c52d1d2d69736a",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_7cdb2ce011ac874c5462fc8406666e53",
+        "created_at": "2026-11-09T20:08:44.945349Z"
+      },
+      {
+        "id": "ces_83740477f768ee687af98c3e401e5f5d",
+        "kind": "implements",
+        "source_id": "ces_c7bbbec8d6dcda3fce3f244f043baf97",
+        "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "status": "active",
+        "provenance": {
+          "phase": "execute",
+          "process": "demo-fresh-context-4",
+          "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "created_at": "2026-11-09T20:08:45.037551Z"
+      },
+      {
+        "id": "ces_fe93f6d13eced804206875f8d5685ba7",
+        "kind": "tests",
+        "source_id": "ces_cb6b9f191a736000f1d85f68db026bf2",
+        "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "status": "active",
+        "provenance": {
+          "phase": "execute",
+          "process": "demo-fresh-context-4",
+          "artifact": "dsp_e33540e9672c7ed8b17d67fde93a7a77",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_3eedf53b718e1abb93b1167186ee3606",
+        "created_at": "2026-11-09T20:08:45.037551Z"
+      },
+      {
+        "id": "ces_1feaee7198ccfb6a827ebde79b971807",
+        "kind": "tests",
+        "source_id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+        "target_id": "ces_8fc084c2518d8dd30fdbffec6100572f",
+        "status": "active",
+        "provenance": {
+          "phase": "close",
+          "process": "demo-fresh-context-5",
+          "artifact": "dsp_737ac4f475b7fdbfb636c324687fd462",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "created_at": "2026-11-09T20:08:45.108253Z"
+      },
+      {
+        "id": "ces_82499077435b98f862c11f85f76c7c16",
+        "kind": "resolves",
+        "source_id": "ces_118b2fcea930e90e2afff0fe05b560c8",
+        "target_id": "ces_fe5036ca7f164e0d7bc2977b2e05d70e",
+        "status": "active",
+        "provenance": {
+          "phase": "close",
+          "process": "demo-fresh-context-5",
+          "artifact": "dsp_737ac4f475b7fdbfb636c324687fd462",
+          "runtime": "host_managed",
+          "model": "external-agent"
+        },
+        "revision_id": "ces_f1d7225cfd86f88931c2ec39c829a6b0",
+        "created_at": "2026-11-09T20:08:45.108253Z"
+      }
+    ]
+  },
+  "state_hash": "113643844a97e6422e48f84f455c64a4e1ed2568bf4175dcba1e5039a7d7789b"
+}

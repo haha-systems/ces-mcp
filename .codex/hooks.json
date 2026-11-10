@@ -1,0 +1,18 @@
+{
+  "description": "Run golangci-lint after Go source edits.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "^(apply_patch|Edit|Write)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/golangci-lint.py\"",
+            "timeout": 360,
+            "statusMessage": "Running golangci-lint after Go source edit"
+          }
+        ]
+      }
+    ]
+  }
+}
