@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log/slog"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -20,6 +21,7 @@ import (
 type Server struct {
 	manager *engine.Manager
 	mcp     *mcp.Server
+	logger  *slog.Logger
 }
 
 type ToolError struct {
@@ -103,13 +105,22 @@ type historyInput struct {
 }
 
 func New(manager *engine.Manager) *Server {
+	return NewWithLogger(manager, slog.New(slog.DiscardHandler))
+}
+
+func NewWithLogger(manager *engine.Manager, logger *slog.Logger) *Server {
+	if logger == nil {
+		logger = slog.New(slog.DiscardHandler)
+	}
+
 	server := mcp.NewServer(
 		&mcp.Implementation{Name: "ces-mcp", Version: "0.2.0"},
 		&mcp.ServerOptions{
 			Instructions: "CES owns persistent epistemic state. Agents propose phase artifacts; the CES state engine validates and commits them.",
+			Logger:       logger,
 		},
 	)
-	s := &Server{manager: manager, mcp: server}
+	s := &Server{manager: manager, mcp: server, logger: logger}
 	s.registerTools()
 	s.registerResources()
 
@@ -125,12 +136,13 @@ func (s *Server) MCP() *mcp.Server { return s.mcp }
 func (s *Server) StreamableHTTPHandler() *mcp.StreamableHTTPHandler {
 	return mcp.NewStreamableHTTPHandler(func(*http.Request) *mcp.Server {
 		return s.mcp
-	}, &mcp.StreamableHTTPOptions{SessionTimeout: 30 * time.Minute})
+	}, &mcp.StreamableHTTPOptions{SessionTimeout: 30 * time.Minute, Logger: s.logger})
 }
 
 func (s *Server) registerTools() {
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_create",
 		"Create a persistent CES run.",
 		createSchema(),
@@ -138,8 +150,10 @@ func (s *Server) registerTools() {
 			return s.manager.Create(ctx, in.Goal, in.ParentRunID)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_status",
 		"Inspect the current CES phase, state version, hash, and pending work.",
 		runSchema(),
@@ -149,6 +163,7 @@ func (s *Server) registerTools() {
 	)
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_project",
 		"Generate the authorised projection and phase contract for the current state.",
 		runSchema(),
@@ -156,8 +171,10 @@ func (s *Server) registerTools() {
 			return s.manager.Project(ctx, in.RunID)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_dispatch",
 		"Prepare a hash-bound phase dispatch for a host-managed or configured server-managed agent.",
 		dispatchSchema(),
@@ -168,8 +185,10 @@ func (s *Server) registerTools() {
 			})
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_submit",
 		"Submit a structured phase result that references its original dispatch.",
 		submitSchema(),
@@ -197,8 +216,10 @@ func (s *Server) registerTools() {
 			})
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_validate",
 		"Validate a submitted proposal against the current projection and phase contract.",
 		proposalSchema(),
@@ -206,8 +227,10 @@ func (s *Server) registerTools() {
 			return s.manager.Validate(ctx, in.RunID, in.ProposalID)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_accept",
 		"Commit a validated proposal using compare-and-swap state versioning.",
 		acceptSchema(),
@@ -221,8 +244,10 @@ func (s *Server) registerTools() {
 			)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_reject",
 		"Record a rejected proposal without changing accepted CES state.",
 		rejectSchema(),
@@ -230,8 +255,10 @@ func (s *Server) registerTools() {
 			return s.manager.Reject(ctx, in.RunID, in.ProposalID, in.Reason)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_advance",
 		"Advance exactly one permitted phase after its proposal is accepted.",
 		advanceSchema(),
@@ -239,8 +266,10 @@ func (s *Server) registerTools() {
 			return s.manager.Advance(ctx, in.RunID, in.StateVersion)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_history",
 		"Inspect accepted events, decisions, dispatches, submissions, and rejected attempts.",
 		historySchema(),
@@ -253,8 +282,10 @@ func (s *Server) registerTools() {
 			return s.manager.History(ctx, in.RunID, in.Offset, limit)
 		},
 	)
+
 	addTool(
 		s.mcp,
+		s.logger,
 		"ces_export",
 		"Export a complete run with its event history and replayable accepted state.",
 		runSchema(),
@@ -266,6 +297,7 @@ func (s *Server) registerTools() {
 
 func addTool[In any](
 	server *mcp.Server,
+	logger *slog.Logger,
 	name, description string,
 	schema map[string]any,
 	handler func(context.Context, In) (any, error),
@@ -276,9 +308,49 @@ func addTool[In any](
 		InputSchema:  schema,
 		OutputSchema: responseSchema(),
 	}
+
 	server.AddTool(
 		tool,
-		func(ctx context.Context, request *mcp.CallToolRequest) (*mcp.CallToolResult, error) {
+		func(ctx context.Context, request *mcp.CallToolRequest) (result *mcp.CallToolResult, callErr error) {
+			started := time.Now()
+
+			sessionID := ""
+			if request.Session != nil {
+				sessionID = request.Session.ID()
+			}
+
+			logger.Debug(
+				"MCP tool call started",
+				"tool", name,
+				"session_id", sessionID,
+				"argument_bytes", len(request.Params.Arguments),
+			)
+
+			defer func() {
+				attrs := []any{
+					"tool", name,
+					"session_id", sessionID,
+					"duration", time.Since(started).String(),
+				}
+				if callErr != nil {
+					logger.Error("MCP tool call failed", append(attrs, "error", callErr)...)
+					return
+				}
+
+				if result != nil && result.IsError {
+					if response, ok := result.StructuredContent.(ToolResponse); ok &&
+						response.Error != nil {
+						attrs = append(attrs, "error_code", response.Error.Code)
+					}
+
+					logger.Warn("MCP tool call completed with error", attrs...)
+
+					return
+				}
+
+				logger.Debug("MCP tool call completed", attrs...)
+			}()
+
 			if failures := engine.ValidateJSONDocument(
 				request.Params.Arguments,
 				schema,
@@ -367,12 +439,14 @@ func createSchema() map[string]any {
 		"parent_run_id": stringSchema("Optional parent CES run identifier."),
 	})
 }
+
 func runSchema() map[string]any {
 	return strictObject(
 		[]string{"run_id"},
 		map[string]any{"run_id": stringSchema("CES run identifier.")},
 	)
 }
+
 func dispatchSchema() map[string]any {
 	return strictObject([]string{"run_id", "state_version", "mode"}, map[string]any{
 		"run_id": stringSchema(
@@ -384,6 +458,7 @@ func dispatchSchema() map[string]any {
 		"allowed_tools": arraySchema(stringSchema("Tool available to the phase agent.")),
 	})
 }
+
 func submitSchema() map[string]any {
 	return strictObject([]string{"run_id", "idempotency_key", "artifact"}, map[string]any{
 		"run_id": stringSchema(

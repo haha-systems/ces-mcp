@@ -13,6 +13,7 @@ func TestNonLoopbackBindingRequiresBearerToken(t *testing.T) {
 	if err == nil {
 		t.Fatal("non-loopback endpoint was allowed without bearer authentication")
 	}
+
 	if _, err := New(http.HandlerFunc(func(http.ResponseWriter, *http.Request) {}), Config{
 		Address: "127.0.0.1:8080", Path: "/mcp",
 	}); err != nil {
@@ -29,6 +30,7 @@ func TestBearerAuthProtectsStreamableEndpoint(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	httpServer := httptest.NewServer(server.Handler)
 	defer httpServer.Close()
 
@@ -46,14 +48,17 @@ func TestBearerAuthProtectsStreamableEndpoint(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
+
 			if test.header != "" {
 				req.Header.Set("Authorization", test.header)
 			}
+
 			response, err := http.DefaultClient.Do(req)
 			if err != nil {
 				t.Fatal(err)
 			}
 			defer response.Body.Close()
+
 			if response.StatusCode != test.wantStatus {
 				t.Fatalf("HTTP status = %d, want %d", response.StatusCode, test.wantStatus)
 			}
