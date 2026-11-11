@@ -41,6 +41,15 @@ go run ./cmd/ces-demo > examples/complete-run.json
 
 The demo creates isolated temporary storage, performs all five phases through host-managed dispatch and the normal validation/acceptance path, exports the run, and removes its temporary storage.
 
+## Releases
+
+Push a version tag such as `v0.3.0` to start the release workflow. It builds `ces-mcp` for Linux, macOS, and Windows on amd64 and arm64, adds checksums, and creates a GitHub Release. The same tag also runs CI.
+
+```sh
+git tag v0.3.0
+git push origin v0.3.0
+```
+
 ## Optional command runtime
 
 The included command adapter supports server-managed execution. Configure:

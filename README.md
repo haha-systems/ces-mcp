@@ -44,3 +44,11 @@ go run ./cmd/ces-demo > examples/complete-run.json
 ```
 
 This is a protocol example with illustrative phase artifacts. Its observations describe the example scenario and are not claims about a real system.
+
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidance and [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) for local checks and release steps.
+
+## License
+
+Licensed under Apache-2.0. See [`LICENSE`](LICENSE).

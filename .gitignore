@@ -6,6 +6,7 @@ ghost.toml
 .superpowers/
 docs/superpowers
 bin/
+dist/
 .claude/
 /silk2/target/
 

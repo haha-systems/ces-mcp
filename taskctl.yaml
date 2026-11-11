@@ -38,9 +38,9 @@ tasks:
   run:
     command: bin/ces-mcp
     env:
-      CES_HTTP_ADDR: 0.0.0.0:4096
+      CES_HTTP_ADDR: 127.0.0.1:4096
+      CES_TRANSPORT: http
       CES_HTTP_PATH: /mcp
-      CES_HTTP_BEARER_TOKEN: 6f87aae2132b877c8b4536a9269b20081629c6f0f8f96985d3cec68ef0e7daf9
 
 pipelines:
   start:
