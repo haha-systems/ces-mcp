@@ -1,32 +1,42 @@
 # CES MCP Server
 
-**A structured, auditable way to investigate problems with AI agents.**
+**A structured, auditable reasoning process for AI agents.**
 
-CES stands for **Cumulative Epistemic State**. It is a way to organise an investigation so that observations, hypotheses, decisions, and results remain distinct and traceable.
+CES stands for **Cumulative Epistemic State**. It separates what an agent has observed from what it believes, proposes, does, and verifies. Instead of jumping from a request to a solution, the agent works through bounded phases and preserves evidence and uncertainty between them.
 
-This repository implements CES v0.2.0 as a standalone [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server. An MCP-compatible client can use it to guide an investigation through five phases, retain accepted evidence across phases, and check proposed updates before committing them.
+CES is designed as a **general reasoning framework**, applicable to software engineering, research, planning, analysis, and other tasks where assumptions may change as new evidence arrives. This repository implements **[CES v0.2.0](docs/SPECIFICATION.md)** as a standalone [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server.
 
-CES is useful for tasks such as debugging a difficult production incident, investigating an unexpected test result, or assessing competing technical explanations.
+### Why non-monotonic reasoning?
 
-**What it does:** manages a structured record of what an investigation knows, what remains uncertain, and why decisions were made.
+In [non-monotonic reasoning](https://en.wikipedia.org/wiki/Non-monotonic_logic), a tentative conclusion can be revised or withdrawn when new information contradicts it. For example, an agent might initially favour one explanation or approach, encounter conflicting evidence, then reject that hypothesis and reconsider its plan.
 
-**What it does not do:** supply its own reasoning model, automatically prove that conclusions are correct, or guarantee that agents run in isolated contexts.
+CES supports this *style* of reasoning by recording competing hypotheses, explicit evidence relations, and revisions without deleting earlier accepted records. **CES is a reasoning protocol, not itself a formally defined non-monotonic logic or proof system.** Its validators check consistency with the protocol's schemas and phase rules, not whether a conclusion is objectively true.
 
-## The idea, in one example
+This structure is intended to reduce premature commitment, confirmation bias, and goal-seeking behaviour: an agent must establish the problem, consider alternatives, state what would disprove its approach, and check the outcome before recommending completion. It does not guarantee freedom from those failures.
 
-Suppose an AI assistant is investigating why a background job sometimes fails.
+**What it does:** maintains an append-only, evidence-linked record of observations, claims, hypotheses, constraints, actions, and outcomes, with explicit control over how the record changes.
 
-| Phase | Question | Example output |
-| --- | --- | --- |
-| **TRIAGE** | What do we know? | Failures began after a deployment. The logs show timeouts, but the cause is unknown. |
-| **ABDUCE** | What could explain it? | Database contention and network latency are competing hypotheses. |
-| **FRAME** | What would test them? | Compare query timings and network traces against explicit success and failure criteria. |
-| **EXECUTE** | What happened when we tested? | Queries slowed under load; network latency remained stable. |
-| **CLOSE** | What can we conclude? | The evidence supports database contention. Record any remaining uncertainty. |
+**What it does not do:** supply its own reasoning model, prove that claims are correct, enforce isolation inside an external model, or prevent every form of goal-hacking.
 
-Without a structured record, an assistant can gradually treat an early guess as an established fact. CES makes those transitions explicit. A phase agent *proposes* structured records; the engine checks the proposal, and an overseer decides whether to accept it.
+## The five phases
 
-The accepted state is **append-only**. New evidence can revise or contradict an earlier claim without erasing its history.
+CES has five phases. Their general purpose is independent of any particular application:
+
+| Phase | Purpose |
+| --- | --- |
+| **TRIAGE** | Bound the task; establish observations, constraints, and unknowns without committing to a solution. |
+| **ABDUCE** | Generate and distinguish competing hypotheses. Identify evidence and conditions that could disprove them. |
+| **FRAME** | Define one bounded course of action, with completion and disconfirmation conditions. |
+| **EXECUTE** | Carry out the agreed frame, record actual outcomes, and surface contradictions instead of silently changing the plan. |
+| **CLOSE** | Independently check the evidence against completion conditions, seek disconfirmation, and retain unresolved uncertainty. |
+
+For example, an agent evaluating a proposed software architecture could first establish the requirements and known failures, compare hypotheses about their causes, define a limited prototype, implement it, and test whether the evidence supports adopting the approach. The same discipline can guide other tasks that need revisable conclusions.
+
+**Current implementation scope:** CES v0.2.0 uses these five phases, but its phase contracts and artifact fields still contain engineering and investigation-oriented terms, such as `root cause`, `leading hypothesis`, and `fix`. The general definitions above describe the broader CES approach; they are not a claim that this release automatically supports every reasoning task without adapting its contracts.
+
+An agent can sometimes treat its first plausible answer as established fact. CES makes the transition from hypothesis to accepted decision explicit. A phase agent *proposes* structured records; the engine validates the proposal against its permitted state changes; an overseer chooses whether to accept it.
+
+The accepted event history is **append-only**. New evidence can contradict or supersede prior conclusions while preserving how the earlier conclusion was reached.
 
 ## Quick start
 
@@ -62,11 +72,11 @@ The default transport is **MCP over stdio**. The client starts the process and c
 
 The default data directory is `./data`. Set `CES_DATA_DIR` to a stable, writable directory if you want run records to survive restarts independently of the current working directory.
 
-### Try an investigation
+### Try CES
 
 Once the server is connected, you can ask an MCP-capable agent:
 
-> Use CES to investigate why our background jobs intermittently time out. Start a run, keep observations separate from hypotheses, and do not close it as complete without supporting evidence.
+> Use CES to evaluate whether we should replace our current queue architecture. Establish the requirements and evidence, compare plausible explanations for its limitations, define a bounded test, and verify the result before recommending a change.
 
 The client must actually orchestrate the phases and submit the structured artifacts. **Connecting the MCP server alone does not automatically make an agent follow the CES workflow.**
 
@@ -93,13 +103,17 @@ CLOSE can finish as **complete** only when the engine's evidence checks support 
 
 For exact tool arguments and response formats, see [MCP API](docs/MCP_API.md).
 
-## Why projections and hashes?
+## Why projections and context isolation?
 
-An agent should not need the entire conversation to continue an investigation. CES provides a **phase projection** containing the accepted state relevant to the current phase.
+A long-running agent can carry forward an early assumption as if it were proven. It can also become attached to an intended result and reinterpret later evidence to fit that result. CES addresses these risks by limiting each phase to its specific authority and an **authorised projection** of the accepted state.
 
-Every dispatch records identifiers and hashes for its state, projection, and instructions. On submission, the server checks that the returned artifact matches the registered dispatch and current state. This helps detect stale or mismatched work.
+The projection contains the structured evidence and decisions needed for the phase, rather than an unrestricted conversation transcript. A fresh phase-agent context, when the host actually enforces one, reduces the influence of earlier speculative messages and premature plans. In ABDUCE, for example, the agent must consider competing explanations; in CLOSE, its job is to challenge the completion claim rather than defend the earlier work.
 
-There is an important boundary: **a hash does not prove that an agent saw only the authorised projection.** The MCP host or agent runtime must enforce context and tool isolation. CES records the dispatch and checks its references; it cannot inspect an agent's hidden context.
+This supports revisable, **non-monotonic reasoning**: contradictions remain explicit, rejected or superseded hypotheses remain in history, and later phases must respond to the new evidence. It can reduce goal-seeking and goal-hacking pressures, but it cannot eliminate them or guarantee that an agent will reason correctly.
+
+Each dispatch also records hashes of its accepted state, projection, and phase instructions. Submission checks detect artifacts referencing the wrong or stale dispatch.
+
+**Isolation boundary:** a matching hash proves that an artifact refers to the stored dispatch; it does **not** prove that the agent saw only that projection. The host or runtime must enforce fresh contexts and restrict external tools. CES cannot inspect hidden model context, and its tool allow-list is advisory unless enforced by the host.
 
 ## Running locally or remotely
 
@@ -148,6 +162,7 @@ The example demonstrates the protocol. Its scenario is illustrative, not a verif
 
 ## Documentation
 
+- [CES v0.2.0 specification](docs/SPECIFICATION.md): scope, state model, phase invariants, and conformance boundaries.
 - [MCP API](docs/MCP_API.md): tools, schemas, resources, and dispatch artifacts.
 - [Architecture](docs/ARCHITECTURE.md): state model, persistence, validation, and isolation boundaries.
 - [Development](docs/DEVELOPMENT.md): build, tests, command adapter, and deployment settings.
